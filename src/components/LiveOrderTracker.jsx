@@ -14,7 +14,7 @@ import { InteractiveStreetDeliveryMap } from './InteractiveStreetDeliveryMap';
 import { onImageError } from '../utils/imageFallbacks';
 
 export const LiveOrderTracker = () => {
-  const { activeOrder } = useApp();
+  const { activeOrder, setInvoiceOrder } = useApp();
   const [chatOpen, setChatOpen] = useState(false);
   const [chatMessages, setChatMessages] = useState([
     { sender: 'rider', text: 'Hi! I have arrived at the restaurant. Will pick up your food soon!' }
@@ -249,10 +249,17 @@ export const LiveOrderTracker = () => {
               ))}
             </div>
 
-            <div className="mt-3 pt-3 border-t border-slate-700 flex justify-between text-xs font-bold text-white">
+            <div className="mt-3 pt-3 border-t border-slate-700 flex justify-between items-center text-xs font-bold text-white">
               <span>Paid via {activeOrder.paymentMethod}</span>
-              <span className="text-orange-400">₹{activeOrder.bill.totalToPay}</span>
+              <span className="text-orange-400">₹{activeOrder.bill?.totalToPay || activeOrder.totalPaid}</span>
             </div>
+
+            <button
+              onClick={() => setInvoiceOrder(activeOrder)}
+              className="mt-3 w-full bg-slate-700/70 hover:bg-slate-700 text-slate-200 hover:text-white font-bold text-xs py-2 rounded-xl border border-slate-600 flex items-center justify-center gap-1.5 transition-colors"
+            >
+              <span>🧾 View & Print Tax Invoice</span>
+            </button>
           </div>
 
         </div>

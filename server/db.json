@@ -1,0 +1,581 @@
+{
+  "users": [
+    {
+      "id": "user-01",
+      "name": "Rahul Sharma",
+      "phone": "+91 98765 43210",
+      "walletCoins": 240,
+      "addresses": [
+        {
+          "tag": "Home",
+          "text": "Flat 402, Lotus Greens, Central Boulevard",
+          "coords": {
+            "x": 440,
+            "y": 390
+          }
+        },
+        {
+          "tag": "Office",
+          "text": "Tower B, Tech Innovation Park, Sector 62",
+          "coords": {
+            "x": 390,
+            "y": 340
+          }
+        },
+        {
+          "tag": "Other",
+          "text": "Villa 12, Palm Meadows, Lake View",
+          "coords": {
+            "x": 470,
+            "y": 310
+          }
+        }
+      ],
+      "favorites": [
+        "resto-1"
+      ]
+    },
+    {
+      "id": "user-1790879934465",
+      "name": "Rahul Sharma",
+      "phone": "+91 9876543210",
+      "walletCoins": 100,
+      "addresses": [
+        {
+          "tag": "Home",
+          "text": "Plot 42, Green Avenue, Sector 18",
+          "coords": {
+            "x": 440,
+            "y": 390
+          }
+        }
+      ],
+      "favorites": []
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "resto-1",
+      "name": "Dum Safar Biryani House",
+      "cuisine": [
+        "Hyderabadi",
+        "Mughlai",
+        "Kebabs"
+      ],
+      "rating": 4.6,
+      "reviewsCount": "3.4k+",
+      "deliveryTimeMin": 28,
+      "distanceKm": 2.1,
+      "costForTwo": 450,
+      "offer": "60% OFF up to ₹120",
+      "couponCode": "STEAL60",
+      "pureVeg": false,
+      "promoted": true,
+      "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+      "address": "Plot 42, Sector 18, Central Food District",
+      "coords": {
+        "x": 220,
+        "y": 140
+      },
+      "gps": {
+        "lat": 28.57,
+        "lng": 77.32
+      },
+      "menu": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "category": "biryani",
+          "price": 349,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 1420,
+          "description": "Authentic long-grain basmati cooked with tender chicken pieces marinated in secret spices and slow-cooked in sealed clay handi.",
+          "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "ds-2",
+          "name": "Nawabi Paneer Dum Biryani",
+          "category": "biryani",
+          "price": 299,
+          "isVeg": true,
+          "isBestseller": true,
+          "rating": 4.7,
+          "ratingCount": 890,
+          "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint.",
+          "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "ds-3",
+          "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+          "category": "starters",
+          "price": 289,
+          "isVeg": false,
+          "isBestseller": false,
+          "rating": 4.5,
+          "ratingCount": 420,
+          "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+          "image": "/images/galouti_kebab.jpg"
+        },
+        {
+          "id": "ds-4",
+          "name": "Shahi Tukda with Rabri",
+          "category": "dessert",
+          "price": 149,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.6,
+          "ratingCount": 310,
+          "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+          "image": "/images/shahi_tukda.jpg"
+        }
+      ]
+    },
+    {
+      "id": "resto-2",
+      "name": "Artisan Crust Pizza Co.",
+      "cuisine": [
+        "Woodfired Pizza",
+        "Italian",
+        "Pasta"
+      ],
+      "rating": 4.7,
+      "reviewsCount": "2.8k+",
+      "deliveryTimeMin": 22,
+      "distanceKm": 1.6,
+      "costForTwo": 550,
+      "offer": "FLAT ₹100 OFF",
+      "couponCode": "CRUST100",
+      "pureVeg": false,
+      "promoted": false,
+      "banner": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80",
+      "address": "Shop 12, The Galleria Mall, 5th Avenue",
+      "coords": {
+        "x": 380,
+        "y": 110
+      },
+      "gps": {
+        "lat": 28.582,
+        "lng": 77.31
+      },
+      "menu": [
+        {
+          "id": "ac-1",
+          "name": "Classic Margherita Di Bufala (12\")",
+          "category": "pizza",
+          "price": 399,
+          "isVeg": true,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 1650,
+          "description": "San Marzano tomato sauce, fresh buffalo mozzarella, hand-torn sweet basil, and extra virgin olive oil on 48h cold fermented crust.",
+          "image": "https://images.unsplash.com/photo-1604382355076-af4b0eb60143?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "ac-2",
+          "name": "Fiery Pepperoni & Hot Honey Pizza",
+          "category": "pizza",
+          "price": 499,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.9,
+          "ratingCount": 2100,
+          "description": "Crispy pork pepperoni cups, shredded whole-milk mozzarella, house marinara, finished with chilli-infused hot honey drizzle.",
+          "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "ac-3",
+          "name": "Truffle Parmesan Garlic Breadsticks",
+          "category": "starters",
+          "price": 199,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.6,
+          "ratingCount": 520,
+          "description": "Pull-apart brioche breadsticks glazed with black truffle butter, aged parmesan, and roasted garlic aioli dip.",
+          "image": "/images/garlic_breadsticks.jpg"
+        },
+        {
+          "id": "ac-4",
+          "name": "Double Chocolate Fudge Brownie",
+          "category": "dessert",
+          "price": 169,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.7,
+          "ratingCount": 430,
+          "description": "Warm Belgian dark chocolate brownie loaded with molten chips, served with chocolate ganache.",
+          "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=80"
+        }
+      ]
+    },
+    {
+      "id": "resto-3",
+      "name": "Burger & Co. Craft Shack",
+      "cuisine": [
+        "Gourmet Burgers",
+        "Crispy Fries",
+        "Thick Shakes"
+      ],
+      "rating": 4.5,
+      "reviewsCount": "1.9k+",
+      "deliveryTimeMin": 25,
+      "distanceKm": 2.8,
+      "costForTwo": 350,
+      "offer": "50% OFF up to ₹100",
+      "couponCode": "BURGER50",
+      "pureVeg": false,
+      "promoted": true,
+      "banner": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
+      "address": "Corner Bay 9, Cyber Park Boulevard",
+      "coords": {
+        "x": 160,
+        "y": 320
+      },
+      "gps": {
+        "lat": 28.56,
+        "lng": 77.335
+      },
+      "menu": [
+        {
+          "id": "bc-1",
+          "name": "The Smokey BBQ Bacon Cheeseburger",
+          "category": "burger",
+          "price": 279,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.7,
+          "ratingCount": 1100,
+          "description": "Smashed juicy patty, sharp cheddar, crispy smoked bacon, caramelized onion jam, and smokey chipotle mayo in toasted brioche.",
+          "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "bc-2",
+          "name": "Crispy Truffle Mushroom Crunch Burger",
+          "category": "burger",
+          "price": 249,
+          "isVeg": true,
+          "isBestseller": true,
+          "rating": 4.6,
+          "ratingCount": 780,
+          "description": "Golden panko-crusted portobello mushroom stuffed with molten cheese, truffle garlic sauce, fresh arugula, and pickles.",
+          "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "bc-3",
+          "name": "Peri-Peri Loaded Cheese Fries",
+          "category": "starters",
+          "price": 159,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.5,
+          "ratingCount": 920,
+          "description": "Skin-on crispy fries tossed in fiery African peri-peri dust, topped with warm liquid cheese sauce and jalapeños.",
+          "image": "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "bc-4",
+          "name": "Salted Caramel Hazelnut Thickshake",
+          "category": "beverages",
+          "price": 189,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.8,
+          "ratingCount": 390,
+          "description": "Rich vanilla ice cream blended with roasted crushed hazelnuts, English toffee caramel, and sea salt flakes.",
+          "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=80"
+        }
+      ]
+    },
+    {
+      "id": "resto-4",
+      "name": "Wok & Roll Asian Street",
+      "cuisine": [
+        "Pan-Asian",
+        "Noodles",
+        "Dimsums",
+        "Bao"
+      ],
+      "rating": 4.6,
+      "reviewsCount": "2.1k+",
+      "deliveryTimeMin": 30,
+      "distanceKm": 3.2,
+      "costForTwo": 500,
+      "offer": "Free Delivery",
+      "couponCode": "FREEDEL",
+      "pureVeg": false,
+      "promoted": false,
+      "banner": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&auto=format&fit=crop&q=80",
+      "address": "East Wing, Metro Junction Food Court",
+      "coords": {
+        "x": 420,
+        "y": 280
+      },
+      "gps": {
+        "lat": 28.59,
+        "lng": 77.34
+      },
+      "menu": [
+        {
+          "id": "wr-1",
+          "name": "Spicy Hakka Noodles with Chilli Paneer Bowl",
+          "category": "chinese",
+          "price": 269,
+          "isVeg": true,
+          "isBestseller": true,
+          "rating": 4.7,
+          "ratingCount": 1340,
+          "description": "Wok-tossed noodles with bell peppers, spring onions, paired with wok-glazed crispy cottage cheese in spicy garlic sauce.",
+          "image": "/images/veg_hakka_noodles.jpg"
+        },
+        {
+          "id": "wr-2",
+          "name": "Steamed Crystal Chicken Dimsums (6 pcs)",
+          "category": "chinese",
+          "price": 249,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 960,
+          "description": "Translucent tapioca dumplings filled with minced chicken, ginger, and lemongrass, served with burnt garlic chilli oil.",
+          "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "wr-3",
+          "name": "Crispy Veg Spring Rolls (4 pcs)",
+          "category": "starters",
+          "price": 179,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.4,
+          "ratingCount": 450,
+          "description": "Golden fried paper-thin rolls packed with glass noodles, cabbage, and carrots with sweet Thai chilli dip.",
+          "image": "/images/crispy_spring_rolls.jpg"
+        }
+      ]
+    },
+    {
+      "id": "resto-5",
+      "name": "Green Bowl & Superfoods",
+      "cuisine": [
+        "Healthy",
+        "Salads",
+        "Keto",
+        "Smoothies"
+      ],
+      "rating": 4.8,
+      "reviewsCount": "1.4k+",
+      "deliveryTimeMin": 18,
+      "distanceKm": 1.2,
+      "costForTwo": 400,
+      "offer": "20% OFF | Code: HEALTH20",
+      "couponCode": "HEALTH20",
+      "pureVeg": true,
+      "promoted": true,
+      "banner": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+      "address": "Green Plaza, Eco Park Road",
+      "coords": {
+        "x": 260,
+        "y": 380
+      },
+      "gps": {
+        "lat": 28.565,
+        "lng": 77.305
+      },
+      "menu": [
+        {
+          "id": "gb-1",
+          "name": "Mediterranean Quinoa & Avocado Power Bowl",
+          "category": "healthy",
+          "price": 299,
+          "isVeg": true,
+          "isBestseller": true,
+          "rating": 4.9,
+          "ratingCount": 820,
+          "description": "Tri-color quinoa, ripe Hass avocado, kalamata olives, cherry tomatoes, cucumbers, feta crumble, and lemon oregano vinaigrette.",
+          "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&auto=format&fit=crop&q=80"
+        },
+        {
+          "id": "gb-2",
+          "name": "Berry Blast Acai Protein Smoothie Bowl",
+          "category": "healthy",
+          "price": 279,
+          "isVeg": true,
+          "isBestseller": false,
+          "rating": 4.7,
+          "ratingCount": 490,
+          "description": "Organic acai blended with almond milk, topped with chia seeds, fresh blueberries, banana slices, and toasted coconut flakes.",
+          "image": "/images/acai_bowl.jpg"
+        }
+      ]
+    },
+    {
+      "id": "resto-6",
+      "name": "Kathi Junction & Shawarma",
+      "cuisine": [
+        "Rolls",
+        "Fast Food",
+        "Street Food"
+      ],
+      "rating": 4.4,
+      "reviewsCount": "4.2k+",
+      "deliveryTimeMin": 20,
+      "distanceKm": 1.9,
+      "costForTwo": 250,
+      "offer": "40% OFF up to ₹80",
+      "couponCode": "KATHI40",
+      "pureVeg": false,
+      "promoted": false,
+      "banner": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80",
+      "address": "Opposite Central Station, G.T. Road",
+      "coords": {
+        "x": 120,
+        "y": 190
+      },
+      "gps": {
+        "lat": 28.575,
+        "lng": 77.315
+      },
+      "menu": [
+        {
+          "id": "kj-1",
+          "name": "Double Egg Chicken Kathi Roll",
+          "category": "rolls",
+          "price": 189,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 2300,
+          "description": "Flaky layered paratha lined with double egg, packed with spiced shredded chicken tikka, sliced onions, and spicy green relish.",
+          "image": "/images/chicken_kathi_roll.jpg"
+        },
+        {
+          "id": "kj-2",
+          "name": "Paneer Makhani Cheese Wrap",
+          "category": "rolls",
+          "price": 169,
+          "isVeg": true,
+          "isBestseller": true,
+          "rating": 4.6,
+          "ratingCount": 1450,
+          "description": "Char-grilled cottage cheese cubes smothered in rich makhani gravy and melted mozzarella, rolled in whole wheat tortilla.",
+          "image": "/images/paneer_tikka_roll.jpg"
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-8477",
+      "userId": "user-1790879934465",
+      "restaurant": {
+        "id": "resto-1",
+        "name": "Dum Safar Biryani House"
+      },
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "price": 349,
+          "qty": 2
+        }
+      ],
+      "bill": {
+        "itemTotal": 698,
+        "deliveryFee": 0,
+        "platformFee": 7,
+        "taxes": 35,
+        "discount": 0,
+        "tip": 20,
+        "totalToPay": 760
+      },
+      "paymentMethod": "UPI (Dynamic QR)",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Lotus Greens, Central Boulevard"
+      },
+      "specialInstructions": "",
+      "status": "CONFIRMED",
+      "assignedRider": {
+        "id": "rider-01",
+        "name": "Rahul Sharma",
+        "phone": "+91 98765 43210",
+        "rating": 4.9,
+        "completedOrders": 1420,
+        "vehicle": "Hero Splendor (DL 04 EF 7821)",
+        "currentCoords": {
+          "x": 250,
+          "y": 180
+        },
+        "distanceToRestoKm": 0.8,
+        "etaToRestoMin": 4,
+        "status": "AVAILABLE",
+        "photo": "/images/rider_rahul.jpg",
+        "acceptanceRate": "98%",
+        "matchingScore": 94.5
+      },
+      "deliveryPin": "2996",
+      "etaMin": 24,
+      "createdAt": "2026-10-01T18:38:54.523Z",
+      "timeline": [
+        {
+          "step": "Order Placed",
+          "time": "Just now",
+          "done": true
+        },
+        {
+          "step": "Kitchen Preparing",
+          "time": "In 5 mins",
+          "done": false
+        },
+        {
+          "step": "Rider Picked Up",
+          "time": "In 12 mins",
+          "done": false
+        },
+        {
+          "step": "Out for Delivery",
+          "time": "In 18 mins",
+          "done": false
+        },
+        {
+          "step": "Delivered",
+          "time": "In 24 mins",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "ORD-9421",
+      "userId": "user-01",
+      "restaurant": {
+        "id": "resto-1",
+        "name": "Dum Safar Biryani House"
+      },
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "price": 349,
+          "qty": 2
+        }
+      ],
+      "totalPaid": 638,
+      "paymentMethod": "UPI (GPay)",
+      "date": "Yesterday, 8:45 PM",
+      "status": "DELIVERED",
+      "deliveryPin": "4821",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Lotus Greens, Central Boulevard"
+      }
+    }
+  ],
+  "activeOtps": {
+    "9876543210": {
+      "otp": "1234",
+      "expiresAt": 1790880234423
+    }
+  }
+}

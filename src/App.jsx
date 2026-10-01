@@ -6,6 +6,8 @@ import { RestaurantCard } from './components/RestaurantCard';
 import { RestaurantDetailModal } from './components/RestaurantDetailModal';
 import { CartDrawer } from './components/CartDrawer';
 import { CheckoutModal } from './components/CheckoutModal';
+import { PhoneAuthModal } from './components/PhoneAuthModal';
+import { InvoiceModal } from './components/InvoiceModal';
 import { LiveOrderTracker } from './components/LiveOrderTracker';
 import { KitchenDashboard } from './components/KitchenDashboard';
 import { RiderDashboard } from './components/RiderDashboard';
@@ -33,7 +35,11 @@ const MainContent = () => {
     selectedCategory, 
     toastMessage,
     applyCouponCode,
-    setActiveRole 
+    setActiveRole,
+    isPhoneAuthOpen,
+    setIsPhoneAuthOpen,
+    invoiceOrder,
+    setInvoiceOrder
   } = useApp();
 
   const [selectedResto, setSelectedResto] = useState(null);
@@ -283,6 +289,17 @@ const MainContent = () => {
       <CheckoutModal
         isOpen={isCheckoutOpen}
         onClose={() => setIsCheckoutOpen(false)}
+      />
+
+      <PhoneAuthModal
+        isOpen={isPhoneAuthOpen}
+        onClose={() => setIsPhoneAuthOpen(false)}
+      />
+
+      <InvoiceModal
+        isOpen={!!invoiceOrder}
+        onClose={() => setInvoiceOrder(null)}
+        order={invoiceOrder}
       />
 
       {/* Global Toast Notification */}

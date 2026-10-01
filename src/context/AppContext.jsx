@@ -59,7 +59,48 @@ export const AppProvider = ({ children }) => {
   const [vegOnlyFilter, setVegOnlyFilter] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isPhoneAuthOpen, setIsPhoneAuthOpen] = useState(false);
+  const [invoiceOrder, setInvoiceOrder] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
+
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('foodpulse_user');
+      return saved ? JSON.parse(saved) : {
+        id: 'user-01',
+        name: 'Rahul Sharma',
+        phone: '+91 98765 43210',
+        walletCoins: 240,
+        addresses: [
+          { tag: 'Home', text: 'Flat 402, Lotus Greens, Central Boulevard', coords: { x: 440, y: 390 } }
+        ]
+      };
+    } catch {
+      return { id: 'user-01', name: 'Rahul Sharma', phone: '+91 98765 43210', walletCoins: 240 };
+    }
+  });
+
+  // Sync with backend API on mount
+  useEffect(() => {
+    fetch('/api/restaurants')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.data?.length > 0) {
+          setRestaurants(data.data);
+        }
+      })
+      .catch(() => {});
+
+    fetch('/api/orders')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.data?.length > 0) {
+          setOrderHistory(data.data);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
   const [dispatchRadar, setDispatchRadar] = useState({
     active: false,
     radiusKm: 3.0,
@@ -239,6 +280,7 @@ export const AppProvider = ({ children }) => {
     const bill = calculateBill();
     const currentResto = RESTAURANTS.find(r => r.id === cart[0].restaurantId) || RESTAURANTS[0];
     const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+    const deliveryPin = Math.floor(1000 + Math.random() * 9000).toString();
 
     const newOrder = {
       id: orderId,
@@ -246,12 +288,16 @@ export const AppProvider = ({ children }) => {
       items: [...cart],
       restaurant: currentResto,
       bill,
+      totalPaid: bill.totalToPay,
       paymentMethod,
       customerAddress: selectedAddress,
+      deliveryAddress: selectedAddress,
+      deliveryPin,
       assignedRider: null,
       etaMin: currentResto.deliveryTimeMin,
       currentStepIndex: 0,
-      createdAt: new Date(),
+      createdAt: new Date().toISOString(),
+      date: 'Just now, ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       history: [
         { status: 'PLACED', label: 'Order Placed & Payment Authorized', time: new Date().toLocaleTimeString() }
       ],
@@ -267,15 +313,30 @@ export const AppProvider = ({ children }) => {
     };
 
     setActiveOrder(newOrder);
+    setOrderHistory(prev => [newOrder, ...prev]);
     clearCart();
     setIsCartOpen(false);
     playTone('success');
     confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
 
+    // Sync order to backend
+    fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        userId: currentUser?.id || 'user-01',
+        restaurant: currentResto,
+        items: [...cart],
+        bill,
+        paymentMethod,
+        deliveryAddress: selectedAddress
+      })
+    }).catch(() => {});
+
     // Emit Kafka events
     emitKafkaEvent('orders.lifecycle', 'ORDER_PLACED', {
       orderId,
-      customerId: 'usr_8921',
+      customerId: currentUser?.id || 'usr_8921',
       restaurantId: currentResto.id,
       amount: bill.totalToPay,
       paymentMethod
@@ -608,7 +669,14 @@ export const AppProvider = ({ children }) => {
         reorderPastOrder,
         favorites,
         toggleFavorite,
-        setRestaurants
+        setRestaurants,
+        currentUser,
+        setCurrentUser,
+        isPhoneAuthOpen,
+        setIsPhoneAuthOpen,
+        invoiceOrder,
+        setInvoiceOrder,
+        showToast
       }}
     >
       {children}

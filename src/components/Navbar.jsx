@@ -25,12 +25,14 @@ export const Navbar = ({ onOpenOffers }) => {
     activeRole,
     setActiveRole,
     orderHistory,
-    reorderPastOrder
+    reorderPastOrder,
+    currentUser,
+    setIsPhoneAuthOpen,
+    setInvoiceOrder
   } = useApp();
 
   const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [userName, setUserName] = useState('Rahul');
 
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
@@ -151,10 +153,12 @@ export const Navbar = ({ onOpenOffers }) => {
                 onClick={() => setIsAuthModalOpen(true)}
                 className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-100 transition-colors"
               >
-                <div className="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-slate-700 font-bold">
+                <div className="w-7 h-7 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold">
                   <User className="w-4 h-4" />
                 </div>
-                <span className="hidden sm:inline font-bold">{userName}</span>
+                <span className="hidden sm:inline font-bold">
+                  {currentUser?.name ? currentUser.name.split(' ')[0] : 'Account'}
+                </span>
               </button>
 
               {/* Cart Drawer Button */}
@@ -235,8 +239,12 @@ export const Navbar = ({ onOpenOffers }) => {
                   👤
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-lg text-slate-900 leading-tight">Rahul Sharma</h3>
-                  <p className="text-xs text-slate-500 font-medium">+91 98765 43210 • Gold Member</p>
+                  <h3 className="font-extrabold text-lg text-slate-900 leading-tight">
+                    {currentUser?.name || 'Foodie Member'}
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium">
+                    {currentUser?.phone || '+91 98765 43210'} • Gold Member
+                  </p>
                 </div>
               </div>
               <button 
@@ -250,12 +258,24 @@ export const Navbar = ({ onOpenOffers }) => {
             {/* Profile Content */}
             <div className="overflow-y-auto space-y-4 py-4 flex-1 pr-1">
               
+              {/* Phone OTP Switch Button */}
+              <button
+                type="button"
+                onClick={() => {
+                  setIsAuthModalOpen(false);
+                  setIsPhoneAuthOpen(true);
+                }}
+                className="w-full bg-orange-50 hover:bg-orange-100 text-orange-700 font-bold text-xs py-2.5 px-3 rounded-2xl border border-orange-200 flex items-center justify-center gap-2 transition-colors"
+              >
+                <span>📱 Switch / Login with Mobile OTP</span>
+              </button>
+
               {/* Wallet Coins Card */}
               <div className="bg-gradient-to-r from-orange-500 to-amber-500 text-white p-4 rounded-2xl shadow-sm flex items-center justify-between">
                 <div>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-orange-100 block">FoodPulse Wallet</span>
-                  <span className="text-2xl font-black font-display">₹240</span>
-                  <span className="text-[11px] text-white/90 block mt-0.5">Use on your next meal</span>
+                  <span className="text-2xl font-black font-display">₹{currentUser?.walletCoins ?? 240}</span>
+                  <span className="text-[11px] text-white/90 block mt-0.5">Instant credit on checkout</span>
                 </div>
                 <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-xl">
                   🪙
@@ -287,15 +307,27 @@ export const Navbar = ({ onOpenOffers }) => {
                         <span className="text-[10px] font-extrabold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
                           ✓ {past.status}
                         </span>
-                        <button
-                          onClick={() => {
-                            reorderPastOrder(past);
-                            setIsAuthModalOpen(false);
-                          }}
-                          className="bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs px-3.5 py-1.5 rounded-xl shadow-sm transition-all"
-                        >
-                          1-Click Reorder
-                        </button>
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setInvoiceOrder(past);
+                              setIsAuthModalOpen(false);
+                            }}
+                            className="bg-slate-200 hover:bg-slate-300 text-slate-800 font-extrabold text-xs px-2.5 py-1.5 rounded-xl transition-colors flex items-center gap-1"
+                          >
+                            <span>🧾 Invoice</span>
+                          </button>
+                          <button
+                            onClick={() => {
+                              reorderPastOrder(past);
+                              setIsAuthModalOpen(false);
+                            }}
+                            className="bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-xs px-3 py-1.5 rounded-xl shadow-sm transition-all"
+                          >
+                            Reorder
+                          </button>
+                        </div>
                       </div>
                     </div>
                   ))}
