@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { CategoryChips } from './components/CategoryChips';
+import { CategoryVarietyShowcase } from './components/CategoryVarietyShowcase';
 import { RestaurantCard } from './components/RestaurantCard';
 import { RestaurantDetailModal } from './components/RestaurantDetailModal';
 import { CartDrawer } from './components/CartDrawer';
@@ -23,7 +24,7 @@ import {
   Heart,
   ChevronRight
 } from 'lucide-react';
-import { AVAILABLE_COUPONS } from './data/mockData';
+import { AVAILABLE_COUPONS, CATEGORIES } from './data/mockData';
 
 const MainContent = () => {
   const { 
@@ -76,7 +77,17 @@ const MainContent = () => {
 
     // Category filter
     if (selectedCategory !== 'all') {
-      const matchCat = resto.menu.some(d => d.category === selectedCategory);
+      const matchCat = resto.menu.some(d => 
+        d.category === selectedCategory ||
+        (selectedCategory === 'burger' && (d.category === 'burger' || d.name.toLowerCase().includes('burger'))) ||
+        (selectedCategory === 'pizza' && (d.category === 'pizza' || d.name.toLowerCase().includes('pizza'))) ||
+        (selectedCategory === 'biryani' && (d.category === 'biryani' || d.name.toLowerCase().includes('biryani'))) ||
+        (selectedCategory === 'dessert' && (d.category === 'dessert' || d.name.toLowerCase().includes('cake') || d.name.toLowerCase().includes('waffle') || d.name.toLowerCase().includes('dessert'))) ||
+        (selectedCategory === 'beverages' && (d.category === 'beverages' || d.name.toLowerCase().includes('shake') || d.name.toLowerCase().includes('coffee'))) ||
+        (selectedCategory === 'rolls' && (d.category === 'rolls' || d.name.toLowerCase().includes('roll') || d.name.toLowerCase().includes('wrap'))) ||
+        (selectedCategory === 'chinese' && (d.category === 'chinese' || d.name.toLowerCase().includes('noodles') || d.name.toLowerCase().includes('dimsum'))) ||
+        (selectedCategory === 'healthy' && (d.category === 'healthy' || d.name.toLowerCase().includes('salad') || d.name.toLowerCase().includes('bowl')))
+      );
       if (!matchCat) return false;
     }
 
@@ -130,44 +141,53 @@ const MainContent = () => {
             {/* Food Categories Carousel */}
             <CategoryChips />
 
-            {/* Consumer Hero Banner */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 rounded-3xl p-6 sm:p-10 text-white shadow-xl shadow-orange-500/15 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="relative z-10 max-w-xl">
-                  <span className="text-xs uppercase font-extrabold tracking-widest bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-full text-white inline-flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-                    <span>Special Welcome Deal</span>
-                  </span>
-                  <h1 className="text-3xl sm:text-5xl font-black font-display tracking-tight mt-3 text-white leading-tight">
-                    Hot meals delivered straight to your door
-                  </h1>
-                  <p className="text-white/90 text-sm sm:text-base mt-2 font-medium">
-                    Order from top verified chefs, artisan kitchens, and bakeries. Use coupon <span className="font-mono bg-white text-orange-600 px-2.5 py-1 rounded-lg font-extrabold shadow-sm">STEAL60</span> for 60% OFF.
-                  </p>
-                </div>
+            {/* Rich Category Dishes Variety Showcase (When a craving is active) */}
+            {selectedCategory !== 'all' ? (
+              <CategoryVarietyShowcase 
+                onSelectRestaurant={(r) => setSelectedResto(r)} 
+              />
+            ) : (
+              /* Consumer Hero Banner (When all cravings) */
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 rounded-3xl p-6 sm:p-10 text-white shadow-xl shadow-orange-500/15 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="relative z-10 max-w-xl">
+                    <span className="text-xs uppercase font-extrabold tracking-widest bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-full text-white inline-flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-amber-200" />
+                      <span>Special Welcome Deal</span>
+                    </span>
+                    <h1 className="text-3xl sm:text-5xl font-black font-display tracking-tight mt-3 text-white leading-tight">
+                      Hot meals delivered straight to your door
+                    </h1>
+                    <p className="text-white/90 text-sm sm:text-base mt-2 font-medium">
+                      Order from top verified chefs, artisan kitchens, and bakeries. Use coupon <span className="font-mono bg-white text-orange-600 px-2.5 py-1 rounded-lg font-extrabold shadow-sm">STEAL60</span> for 60% OFF.
+                    </p>
+                  </div>
 
-                <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3">
-                  <button
-                    onClick={() => setIsOffersModalOpen(true)}
-                    className="bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-2xl shadow-lg flex items-center gap-2 transition-all hover:scale-105"
-                  >
-                    <Percent className="w-4 h-4" />
-                    <span>View Today's Offers</span>
-                  </button>
-                </div>
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3">
+                    <button
+                      onClick={() => setIsOffersModalOpen(true)}
+                      className="bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-2xl shadow-lg flex items-center gap-2 transition-all hover:scale-105"
+                    >
+                      <Percent className="w-4 h-4" />
+                      <span>View Today's Offers</span>
+                    </button>
+                  </div>
 
-                <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white to-transparent" />
+                  <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-15 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white to-transparent" />
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Restaurants Directory Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
               
               {/* Filter & Sorting Controls */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
                 <div>
                   <h2 className="text-2xl font-black text-slate-900 font-display tracking-tight">
-                    Top Restaurants Near You
+                    {selectedCategory !== 'all'
+                      ? `Restaurants Serving ${CATEGORIES.find(c => c.id === selectedCategory)?.name || 'This Dish'}`
+                      : 'Top Restaurants Near You'}
                   </h2>
                   <p className="text-xs text-slate-500 font-semibold mt-0.5">
                     Showing {filteredRestaurants.length} curated food spots with fast live delivery

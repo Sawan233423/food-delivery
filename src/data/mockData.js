@@ -14,7 +14,7 @@ export const RESTAURANTS = [
   {
     id: 'resto-1',
     name: 'Dum Safar Biryani House',
-    cuisine: ['Hyderabadi', 'Mughlai', 'Kebabs'],
+    cuisine: ['Hyderabadi', 'Mughlai', 'Kebabs', 'Biryani'],
     rating: 4.6,
     reviewsCount: '3.4k+',
     deliveryTimeMin: 28,
@@ -26,7 +26,7 @@ export const RESTAURANTS = [
     promoted: true,
     banner: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80',
     address: 'Plot 42, Sector 18, Central Food District',
-    coords: { x: 220, y: 140 }, // internal 2D grid coordinates for live map simulation
+    coords: { x: 220, y: 140 },
     gps: { lat: 28.5700, lng: 77.3200 },
     menu: [
       {
@@ -38,7 +38,7 @@ export const RESTAURANTS = [
         isBestseller: true,
         rating: 4.8,
         ratingCount: 1420,
-        description: 'Authentic long-grain basmati cooked with tender chicken pieces marinated in secret spices and slow-cooked in sealed clay handi.',
+        description: 'Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.',
         image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80'
       },
       {
@@ -50,11 +50,59 @@ export const RESTAURANTS = [
         isBestseller: true,
         rating: 4.7,
         ratingCount: 890,
-        description: 'Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint.',
+        description: 'Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint leaves.',
         image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80'
       },
       {
         id: 'ds-3',
+        name: 'Awadhi Dum Mutton Biryani (Special)',
+        category: 'biryani',
+        price: 449,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.9,
+        ratingCount: 1650,
+        description: 'Prime cuts of tender mutton slow-braised in aromatic whole spices, layered with royal saffron rice and drizzled with desi ghee.',
+        image: 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ds-4',
+        name: 'Lucknowi Murgh Dum Biryani',
+        category: 'biryani',
+        price: 369,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 680,
+        description: 'Subtle and aromatic white-gravy style royal biryani cooked with bone-in chicken thighs, rose water, and kewra essence.',
+        image: 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ds-5',
+        name: 'Kolkata Special Egg Biryani (2 Eggs)',
+        category: 'biryani',
+        price: 259,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.5,
+        ratingCount: 520,
+        description: 'Classic Kolkata style biryani with golden pan-fried eggs, spiced large potato chunk, and mildly sweet cardamom infused rice.',
+        image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ds-6',
+        name: 'Saffron Subz Handi Biryani',
+        category: 'biryani',
+        price: 279,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 410,
+        description: 'Fresh farm carrots, beans, florets, and green peas layered with kewra saffron basmati and golden fried shallots.',
+        image: 'https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ds-7',
         name: 'Galouti Kebab with Roomali Roti (4 pcs)',
         category: 'starters',
         price: 289,
@@ -66,7 +114,7 @@ export const RESTAURANTS = [
         image: '/images/galouti_kebab.jpg'
       },
       {
-        id: 'ds-4',
+        id: 'ds-8',
         name: 'Shahi Tukda with Rabri',
         category: 'dessert',
         price: 149,
@@ -76,13 +124,25 @@ export const RESTAURANTS = [
         ratingCount: 310,
         description: 'Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.',
         image: '/images/shahi_tukda.jpg'
+      },
+      {
+        id: 'ds-9',
+        name: 'Chilled Masala Chaas Cooler',
+        category: 'beverages',
+        price: 79,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 290,
+        description: 'Traditional buttermilk blended with roasted cumin, mint, green chillies, and rock salt for perfect digestion.',
+        image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80'
       }
     ]
   },
   {
     id: 'resto-2',
     name: 'Artisan Crust Pizza Co.',
-    cuisine: ['Woodfired Pizza', 'Italian', 'Pasta'],
+    cuisine: ['Woodfired Pizza', 'Italian', 'Pasta', 'Pizza'],
     rating: 4.7,
     reviewsCount: '2.8k+',
     deliveryTimeMin: 22,
@@ -111,7 +171,7 @@ export const RESTAURANTS = [
       },
       {
         id: 'ac-2',
-        name: 'Fiery Pepperoni & Hot Honey Pizza',
+        name: 'Fiery Pepperoni & Hot Honey Pizza (12")',
         category: 'pizza',
         price: 499,
         isVeg: false,
@@ -123,6 +183,54 @@ export const RESTAURANTS = [
       },
       {
         id: 'ac-3',
+        name: 'Farmhouse Veggie Supreme Pizza (12")',
+        category: 'pizza',
+        price: 429,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.7,
+        ratingCount: 1290,
+        description: 'Crunchy bell peppers, black olives, sweet corn, button mushrooms, red onions, and melted mozzarella over herb tomato base.',
+        image: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ac-4',
+        name: 'Quattro Formaggi 4-Cheese Pizza (12")',
+        category: 'pizza',
+        price: 489,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.8,
+        ratingCount: 840,
+        description: 'Decadent white pizza with smoked gorgonzola, aged parmesan, fresh mozzarella, and creamy fontina cheese.',
+        image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ac-5',
+        name: 'Peri-Peri Smoked Chicken Pizza (12")',
+        category: 'pizza',
+        price: 479,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 760,
+        description: 'Smokey shredded roast chicken, spicy peri-peri drizzle, red paprika, and gooey cheese on crispy hand-stretched sourdough.',
+        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ac-6',
+        name: 'Paneer Tikka Makhani Pizza (12")',
+        category: 'pizza',
+        price: 439,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 650,
+        description: 'Tandoori spiced paneer cubes, capsicum, pickled onion rings with rich buttery makhani sauce and fresh coriander.',
+        image: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ac-7',
         name: 'Truffle Parmesan Garlic Breadsticks',
         category: 'starters',
         price: 199,
@@ -134,7 +242,7 @@ export const RESTAURANTS = [
         image: '/images/garlic_breadsticks.jpg'
       },
       {
-        id: 'ac-4',
+        id: 'ac-8',
         name: 'Double Chocolate Fudge Brownie',
         category: 'dessert',
         price: 169,
@@ -144,13 +252,25 @@ export const RESTAURANTS = [
         ratingCount: 430,
         description: 'Warm Belgian dark chocolate brownie loaded with molten chips, served with chocolate ganache.',
         image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'ac-9',
+        name: 'Italian Peach Sparkler Iced Tea',
+        category: 'beverages',
+        price: 129,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 380,
+        description: 'Brewed black tea infused with natural Italian white peach puree, mint, and crushed ice.',
+        image: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=400&auto=format&fit=crop&q=80'
       }
     ]
   },
   {
     id: 'resto-3',
     name: 'Burger & Co. Craft Shack',
-    cuisine: ['Gourmet Burgers', 'Crispy Fries', 'Thick Shakes'],
+    cuisine: ['Gourmet Burgers', 'Crispy Fries', 'Thick Shakes', 'Burgers'],
     rating: 4.5,
     reviewsCount: '1.9k+',
     deliveryTimeMin: 25,
@@ -191,6 +311,54 @@ export const RESTAURANTS = [
       },
       {
         id: 'bc-3',
+        name: 'Classic Crispy Chicken Zinger Burger',
+        category: 'burger',
+        price: 239,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 1540,
+        description: 'Extra crunchy fried chicken breast fillet coated in hot spices, thousand island glaze, crispy iceberg lettuce in sesame bun.',
+        image: 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bc-4',
+        name: 'Peri-Peri Paneer Crunch Burger',
+        category: 'burger',
+        price: 229,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 690,
+        description: 'Thick marinated cottage cheese steak flash-fried to golden crispness, tossed in African peri-peri seasoning and creamy garlic mayo.',
+        image: 'https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bc-5',
+        name: 'Spicy Mexican Jalapeño Nacho Burger',
+        category: 'burger',
+        price: 239,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.5,
+        ratingCount: 520,
+        description: 'Spiced black bean and sweet corn patty, crunchy tortilla nachos, pickled jalapeño slices, salsa roja, and molten cheese.',
+        image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bc-6',
+        name: 'Ultimate Double Decker Crispy Patty Burger',
+        category: 'burger',
+        price: 319,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.9,
+        ratingCount: 880,
+        description: 'Two gigantic crispy chicken patties stacked with double melted American cheddar, gherkins, and house special secret burger sauce.',
+        image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bc-7',
         name: 'Peri-Peri Loaded Cheese Fries',
         category: 'starters',
         price: 159,
@@ -202,7 +370,19 @@ export const RESTAURANTS = [
         image: 'https://images.unsplash.com/photo-1585109649139-366815a0d713?w=400&auto=format&fit=crop&q=80'
       },
       {
-        id: 'bc-4',
+        id: 'bc-8',
+        name: 'Crispy Golden Onion Rings with Garlic Dip',
+        category: 'starters',
+        price: 139,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.4,
+        ratingCount: 410,
+        description: 'Thick hand-cut Spanish onion rings coated in seasoned batter and panko crumbs, served with garlic herb aioli.',
+        image: 'https://images.unsplash.com/photo-1639024471285-056685704d22?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bc-9',
         name: 'Salted Caramel Hazelnut Thickshake',
         category: 'beverages',
         price: 189,
@@ -212,13 +392,25 @@ export const RESTAURANTS = [
         ratingCount: 390,
         description: 'Rich vanilla ice cream blended with roasted crushed hazelnuts, English toffee caramel, and sea salt flakes.',
         image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bc-10',
+        name: 'Oreo Overload Monster Shake',
+        category: 'beverages',
+        price: 199,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.9,
+        ratingCount: 650,
+        description: 'Creamy cookies and cream shake with blended Oreo crumbles, chocolate drizzle, and whipped cream crown.',
+        image: 'https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&auto=format&fit=crop&q=80'
       }
     ]
   },
   {
     id: 'resto-4',
     name: 'Wok & Roll Asian Street',
-    cuisine: ['Pan-Asian', 'Noodles', 'Dimsums', 'Bao'],
+    cuisine: ['Pan-Asian', 'Noodles', 'Dimsums', 'Bao', 'Asian'],
     rating: 4.6,
     reviewsCount: '2.1k+',
     deliveryTimeMin: 30,
@@ -259,6 +451,18 @@ export const RESTAURANTS = [
       },
       {
         id: 'wr-3',
+        name: 'Schezwan Chicken Fried Rice Bowl',
+        category: 'chinese',
+        price: 289,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 1120,
+        description: 'Fragrant basmati wok-tossed in artisanal fiery Schezwan paste with diced tender chicken, scrambled eggs, and spring onion greens.',
+        image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'wr-4',
         name: 'Crispy Veg Spring Rolls (4 pcs)',
         category: 'starters',
         price: 179,
@@ -268,6 +472,66 @@ export const RESTAURANTS = [
         ratingCount: 450,
         description: 'Golden fried paper-thin rolls packed with glass noodles, cabbage, and carrots with sweet Thai chilli dip.',
         image: '/images/crispy_spring_rolls.jpg'
+      },
+      {
+        id: 'wr-5',
+        name: 'Wok-Tossed Chilli Paneer Gravy',
+        category: 'chinese',
+        price: 249,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 560,
+        description: 'Crispy paneer cubes tossed with crunchy onions, capsicum, dark soya sauce, and crushed green chillies.',
+        image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'wr-6',
+        name: 'Thai Green Curry with Jasmine Rice',
+        category: 'chinese',
+        price: 329,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 410,
+        description: 'Creamy coconut milk simmered with fresh galangal, kaffir lime, bamboo shoots, and exotic Asian greens served with aromatic rice.',
+        image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'wr-7',
+        name: 'Burnt Garlic Veg Fried Rice',
+        category: 'chinese',
+        price: 239,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.5,
+        ratingCount: 380,
+        description: 'Long grain rice tossed with golden fried minced garlic, assorted diced veggies, and oriental sesame oil.',
+        image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'wr-8',
+        name: 'Teriyaki Glazed Chicken Bao Buns (2 pcs)',
+        category: 'chinese',
+        price: 259,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 310,
+        description: 'Pillow-soft steamed lotus leaf bao buns stuffed with sweet and savory teriyaki grilled chicken, pickled cucumber, and sriracha mayo.',
+        image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'wr-9',
+        name: 'Lemongrass & Lychee Iced Cooler',
+        category: 'beverages',
+        price: 139,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 220,
+        description: 'Refreshing tropical lychee nectar infused with bruised lemongrass stalks, lemon juice, and sparkling soda.',
+        image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80'
       }
     ]
   },
@@ -282,7 +546,7 @@ export const RESTAURANTS = [
     costForTwo: 400,
     offer: '20% OFF | Code: HEALTH20',
     couponCode: 'HEALTH20',
-    pureVeg: true,
+    pureVeg: false,
     promoted: true,
     banner: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80',
     address: 'Green Plaza, Eco Park Road',
@@ -307,18 +571,78 @@ export const RESTAURANTS = [
         category: 'healthy',
         price: 279,
         isVeg: true,
-        isBestseller: false,
+        isBestseller: true,
         rating: 4.7,
         ratingCount: 490,
         description: 'Organic acai blended with almond milk, topped with chia seeds, fresh blueberries, banana slices, and toasted coconut flakes.',
         image: '/images/acai_bowl.jpg'
+      },
+      {
+        id: 'gb-3',
+        name: 'Grilled Herb Chicken Caesar Salad',
+        category: 'healthy',
+        price: 319,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 670,
+        description: 'Rosemary grilled chicken breast, crisp romaine lettuce, sourdough croutons, shaved parmesan, and light Greek yogurt caesar dressing.',
+        image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'gb-4',
+        name: 'Greek Feta & Roasted Veggie Protein Salad',
+        category: 'healthy',
+        price: 269,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 390,
+        description: 'Crumbled Greek feta, roasted zucchini, bell peppers, baby spinach, toasted pumpkin seeds, and cold pressed olive oil dressing.',
+        image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'gb-5',
+        name: 'High Protein Paneer & Edamame Bowl',
+        category: 'healthy',
+        price: 289,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 320,
+        description: 'Spiced cottage cheese cubes, Japanese edamame beans, brown basmati, purple cabbage slaw, and toasted sesame tahini drizzle.',
+        image: 'https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'gb-6',
+        name: 'Fresh Cold Pressed Detox Green Juice (300ml)',
+        category: 'beverages',
+        price: 149,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.8,
+        ratingCount: 440,
+        description: '100% pure raw cold-pressed celery, cucumber, green apple, spinach, and lemon juice with zero added sugar or water.',
+        image: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'gb-7',
+        name: 'Alphonso Mango Chia Seed Pudding',
+        category: 'dessert',
+        price: 169,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 260,
+        description: 'Overnight coconut milk soaked chia pudding topped with fresh Alphonso mango pulp and roasted almond slivers.',
+        image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop&q=80'
       }
     ]
   },
   {
     id: 'resto-6',
     name: 'Kathi Junction & Shawarma',
-    cuisine: ['Rolls', 'Fast Food', 'Street Food'],
+    cuisine: ['Rolls', 'Fast Food', 'Street Food', 'Kathi Rolls'],
     rating: 4.4,
     reviewsCount: '4.2k+',
     deliveryTimeMin: 20,
@@ -354,8 +678,336 @@ export const RESTAURANTS = [
         isBestseller: true,
         rating: 4.6,
         ratingCount: 1450,
-        description: 'Char-grilled cottage cheese cubes smothered in rich makhani gravy and melted mozzarella, rolled in whole wheat tortilla.',
+        description: 'Char-grilled cottage cheese cubes smothered in rich makhani gravy and melted mozzarella, rolled in whole wheat paratha.',
         image: '/images/paneer_tikka_roll.jpg'
+      },
+      {
+        id: 'kj-3',
+        name: 'Kolkata Mutton Boti Seekh Roll',
+        category: 'rolls',
+        price: 249,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 1180,
+        description: 'Succulent mutton seekh kebabs grilled on charcoal, sprinkled with chaat masala, mint mayo, and rolled in crispy paratha.',
+        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'kj-4',
+        name: 'Crispy Falafel & Hummus Pita Wrap',
+        category: 'rolls',
+        price: 159,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.5,
+        ratingCount: 620,
+        description: 'Golden chickpea falafel patties, velvety garlic hummus, pickled cucumbers, tomato relish, and tahini sauce in warm pita.',
+        image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'kj-5',
+        name: 'Butter Chicken Tikka Malai Wrap',
+        category: 'rolls',
+        price: 209,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 890,
+        description: 'Tender chicken malai tikka tossed with buttery tomato cream, bell pepper strips, and rolled in flaky rumali paratha.',
+        image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'kj-6',
+        name: 'Spicy Cheesy Soya Chaap Roll',
+        category: 'rolls',
+        price: 159,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.5,
+        ratingCount: 540,
+        description: 'Tandoor grilled spiced soya chaap chunks tossed with liquid cheese, capsicum, and mint chutney.',
+        image: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'kj-7',
+        name: 'Crispy Peri-Peri Chicken Nuggets (6 pcs)',
+        category: 'starters',
+        price: 149,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.4,
+        ratingCount: 410,
+        description: 'Tender minced chicken bites fried in crunchy panko crust, dusted with peri-peri seasoning and hot mayo dip.',
+        image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'kj-8',
+        name: 'Masala Lemonade Refresher',
+        category: 'beverages',
+        price: 79,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 310,
+        description: 'Freshly squeezed lemon with roasted cumin, black salt, and sparkling ice-cold soda.',
+        image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80'
+      }
+    ]
+  },
+  {
+    id: 'resto-7',
+    name: 'The Belgian Waffle & Bake Lab',
+    cuisine: ['Waffles', 'Desserts', 'Cakes', 'Shakes', 'Bakery'],
+    rating: 4.8,
+    reviewsCount: '3.1k+',
+    deliveryTimeMin: 20,
+    distanceKm: 1.5,
+    costForTwo: 350,
+    offer: '50% OFF up to ₹100',
+    couponCode: 'WELCOME50',
+    pureVeg: true,
+    promoted: true,
+    banner: 'https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=800&auto=format&fit=crop&q=80',
+    address: 'Corner Shop 4, High Street Promenade',
+    coords: { x: 320, y: 220 },
+    gps: { lat: 28.5720, lng: 77.3250 },
+    menu: [
+      {
+        id: 'bw-1',
+        name: 'Belgian Dark Chocolate Truffle Cake (500g)',
+        category: 'dessert',
+        price: 399,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.9,
+        ratingCount: 1820,
+        description: 'Decadent multi-layered moist Dutch cocoa sponge smothered in silky 64% dark Belgian chocolate truffle ganache.',
+        image: '/images/chocolate_cake_dessert.jpg'
+      },
+      {
+        id: 'bw-2',
+        name: 'Warm Molten Choco Lava Cup with Vanilla Cream',
+        category: 'dessert',
+        price: 139,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 2150,
+        description: 'Single-serve soft cocoa cake with a gushing river of molten warm chocolate center when cut open.',
+        image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-3',
+        name: 'New York Baked Blueberry Cheesecake Slice',
+        category: 'dessert',
+        price: 219,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 1420,
+        description: 'Rich Philadelphia cream cheese baked over buttery graham cracker crust, topped with wild Canadian blueberry compote.',
+        image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-4',
+        name: 'Nutella Loaded Crispy Belgian Waffle',
+        category: 'dessert',
+        price: 199,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.9,
+        ratingCount: 1690,
+        description: 'Freshly baked golden waffle grid generously slathered with warm melted Nutella and crushed roasted hazelnuts.',
+        image: 'https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-5',
+        name: 'Red Velvet Cream Cheese Pastry',
+        category: 'dessert',
+        price: 149,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 780,
+        description: 'Velvety crimson sponge layered with light tangy cream cheese frosting and white chocolate curls.',
+        image: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-6',
+        name: 'Warm Gulab Jamun with Saffron Rabri (2 pcs)',
+        category: 'dessert',
+        price: 129,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.8,
+        ratingCount: 920,
+        description: 'Soft milk solid dumplings fried in desi ghee, soaked in rose syrup and served hot with thick chilled saffron rabri.',
+        image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-7',
+        name: 'Caramel Lotus Biscoff Sundae Cup',
+        category: 'dessert',
+        price: 189,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.8,
+        ratingCount: 640,
+        description: 'Vanilla bean ice cream layered with Belgian Lotus Biscoff spread, crushed spiced cookies, and salted caramel glaze.',
+        image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-8',
+        name: 'Belgian Chocolate Frappe with Choco Chips',
+        category: 'beverages',
+        price: 189,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.9,
+        ratingCount: 880,
+        description: 'Blended cold espresso with rich cocoa fudge, dark chocolate chips, milk, and whipped chocolate cream.',
+        image: 'https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'bw-9',
+        name: 'Classic Cold Coffee with Vanilla Ice Cream',
+        category: 'beverages',
+        price: 159,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 1140,
+        description: 'Smooth slow-extracted Arabica coffee whipped with creamy milk and topped with a scoop of Madagascar vanilla ice cream.',
+        image: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=400&auto=format&fit=crop&q=80'
+      }
+    ]
+  },
+  {
+    id: 'resto-8',
+    name: 'Smash & Bun Urban Burger Co.',
+    cuisine: ['American Burgers', 'Fries', 'Wings', 'Burgers'],
+    rating: 4.7,
+    reviewsCount: '2.4k+',
+    deliveryTimeMin: 22,
+    distanceKm: 2.2,
+    costForTwo: 380,
+    offer: 'FLAT ₹80 OFF',
+    couponCode: 'WELCOME50',
+    pureVeg: false,
+    promoted: true,
+    banner: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&auto=format&fit=crop&q=80',
+    address: 'Block C, Sector 29 Market Lane',
+    coords: { x: 300, y: 170 },
+    gps: { lat: 28.5800, lng: 77.3300 },
+    menu: [
+      {
+        id: 'sb-1',
+        name: 'The Classic Smashed American Double Cheeseburger',
+        category: 'burger',
+        price: 269,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.9,
+        ratingCount: 1950,
+        description: 'Two thin smashed crispy-edged beef/chicken patties, double melted cheddar, yellow mustard relish, dill pickles, and diced sweet onions in butter toasted brioche.',
+        image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-2',
+        name: 'Nashville Hot Crispy Chicken Burger',
+        category: 'burger',
+        price: 259,
+        isVeg: false,
+        isBestseller: true,
+        rating: 4.8,
+        ratingCount: 1620,
+        description: 'Tender chicken breast dipped in fiery Nashville cayenne chili oil, topped with sweet honey slaw, tangy dill pickles, and smoked aioli.',
+        image: 'https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-3',
+        name: 'Crispy Corn & Cheesy Paneer Burger',
+        category: 'burger',
+        price: 219,
+        isVeg: true,
+        isBestseller: true,
+        rating: 4.7,
+        ratingCount: 940,
+        description: 'Crisp golden patty made with sweet American corn and molten cheddar paneer, crunchy lettuce, and spicy chipotle mayo.',
+        image: 'https://images.unsplash.com/photo-1521305916504-4a1121188589?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-4',
+        name: 'Smoky Chipotle BBQ Pulled Chicken Burger',
+        category: 'burger',
+        price: 289,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.7,
+        ratingCount: 730,
+        description: 'Slow-cooked hickory smoked shredded chicken tossed in sweet molasses BBQ sauce, topped with crisp red cabbage slaw.',
+        image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-5',
+        name: 'The Truffle Melt Gourmet Veggie Burger',
+        category: 'burger',
+        price: 249,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 580,
+        description: 'Pan-seared spiced lentil & mushroom patty topped with black truffle butter glaze, caramelized balsamic onions, and swiss cheese.',
+        image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-6',
+        name: 'Spicy Panko Fish Fillet Burger with Tartar Sauce',
+        category: 'burger',
+        price: 279,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.6,
+        ratingCount: 480,
+        description: 'Crispy fried flaky sea fish fillet seasoned with lemon pepper, fresh caper tartar sauce, and shredded butterhead lettuce.',
+        image: 'https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-7',
+        name: 'Firecracker Cajun Fries with Cheese Dip',
+        category: 'starters',
+        price: 149,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.5,
+        ratingCount: 820,
+        description: 'Shoestring french fries tossed in Louisiana cajun spice blend, served with warm jalapeño cheese dipping cup.',
+        image: 'https://images.unsplash.com/photo-1585109649139-366815a0d713?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-8',
+        name: 'Crispy Boneless BBQ Chicken Wings (6 pcs)',
+        category: 'starters',
+        price: 229,
+        isVeg: false,
+        isBestseller: false,
+        rating: 4.8,
+        ratingCount: 910,
+        description: 'Tender boneless chicken tenders flash-fried crisp, glazed in Texas smokey BBQ sauce, served with blue cheese ranch.',
+        image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=400&auto=format&fit=crop&q=80'
+      },
+      {
+        id: 'sb-9',
+        name: 'Thick Peanut Butter & Banana Shake',
+        category: 'beverages',
+        price: 179,
+        isVeg: true,
+        isBestseller: false,
+        rating: 4.8,
+        ratingCount: 390,
+        description: 'Creamy roasted peanut butter blended with fresh Robusta banana, vanilla ice cream, and dark honey drizzle.',
+        image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=80'
       }
     ]
   }

@@ -32,24 +32,19 @@ export const SystemDesignExplorer = () => {
             <div className="flex items-center gap-2">
               <span className="text-xs uppercase font-extrabold tracking-widest bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-full flex items-center gap-1.5">
                 <Cpu className="w-3.5 h-3.5" />
-                Handwritten System Design Blueprint
+                System Architecture Specification
               </span>
-              <a
-                href="https://www.instagram.com/p/DdolNwgGnHl/?img_index=7"
-                target="_blank"
-                rel="noreferrer"
-                className="text-xs text-indigo-300 hover:text-white flex items-center gap-1 font-semibold underline decoration-indigo-500/50"
-              >
-                <span>Original @abhi_techhub Post</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              <span className="text-xs text-indigo-300 font-semibold bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-800/50 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Original Engineering Research (15 Modules)</span>
+              </span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight text-white mt-2">
               Food Delivery App System Architecture
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
-              Interactive engineering breakdown of the 15-module handbook for handling millions of concurrent users, sub-second restaurant discovery, dynamic dispatching, and real-time Kafka event streams.
+              Comprehensive architectural analysis and live engineering breakdown of the 15 core microservices for handling 1M+ concurrent users, sub-second restaurant discovery, dynamic dispatching, and real-time Kafka event streams.
             </p>
           </div>
 
@@ -72,7 +67,7 @@ export const SystemDesignExplorer = () => {
             }`}
           >
             <Radar className="w-4 h-4" />
-            <span>Slide 7: Dispatch Matching Simulator</span>
+            <span>Module 7: Dispatch Matching Simulator</span>
           </button>
 
           <button
@@ -134,7 +129,7 @@ export const SystemDesignExplorer = () => {
             <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-slate-100">
               <div>
                 <span className="text-xs font-extrabold uppercase tracking-wider bg-orange-100 text-orange-700 px-3 py-1 rounded-full">
-                  Topic 7: Delivery Partner Assignment
+                  Module 7: Automated Driver Dispatch Engine
                 </span>
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 font-display mt-2">
                   Dispatch Matching Engine & Redis Spatial Index
@@ -217,7 +212,7 @@ export const SystemDesignExplorer = () => {
               {/* Scored Candidate Table */}
               <div className="space-y-4">
                 <h4 className="font-extrabold text-sm text-slate-900 uppercase tracking-wider">
-                  Ranked Candidates (Slide 7 Scoring Table)
+                  Ranked Candidates (Dispatch Scoring Heuristic)
                 </h4>
 
                 <div className="space-y-3">
@@ -323,7 +318,7 @@ try {
             </div>
 
             <p className="text-xs text-slate-400 mt-2">
-              Every action you perform in this app (placing an order, kitchen acceptance, rider movement) automatically publishes an event to this stream, exactly as described in Slide 9 & Slide 4 of the handbook.
+              Every action you perform in this app (placing an order, kitchen acceptance, rider movement) automatically publishes an event to this stream, exactly as architected in Module 9 (Kafka Streams) & Module 4 (Order State Machine).
             </p>
 
             {/* Log feed */}
