@@ -157,7 +157,7 @@ export const Navbar = ({ onOpenOffers }) => {
                   <User className="w-4 h-4" />
                 </div>
                 <span className="hidden sm:inline font-bold">
-                  {currentUser?.name ? currentUser.name.split(' ')[0] : 'Account'}
+                  {currentUser?.name ? currentUser.name.split(' ')[0] : 'SAWAN'}
                 </span>
               </button>
 

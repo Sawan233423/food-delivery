@@ -66,22 +66,47 @@ export const AppProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(() => {
     try {
       const saved = localStorage.getItem('foodpulse_user');
-      return saved ? JSON.parse(saved) : {
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (!parsed.name || parsed.name.toLowerCase().includes('rahul')) {
+          parsed.name = 'SAWAN';
+          localStorage.setItem('foodpulse_user', JSON.stringify(parsed));
+        }
+        return parsed;
+      }
+      const defaultUser = {
         id: 'user-01',
-        name: 'Rahul Sharma',
+        name: 'SAWAN',
         phone: '+91 98765 43210',
         walletCoins: 240,
         addresses: [
           { tag: 'Home', text: 'Flat 402, Lotus Greens, Central Boulevard', coords: { x: 440, y: 390 } }
         ]
       };
+      localStorage.setItem('foodpulse_user', JSON.stringify(defaultUser));
+      return defaultUser;
     } catch {
-      return { id: 'user-01', name: 'Rahul Sharma', phone: '+91 98765 43210', walletCoins: 240 };
+      return { id: 'user-01', name: 'SAWAN', phone: '+91 98765 43210', walletCoins: 240 };
     }
   });
 
   // Sync with backend API on mount
   useEffect(() => {
+    fetch('/api/auth/me')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success && data.data) {
+          setCurrentUser(prev => {
+            if (!prev || prev.name.toLowerCase().includes('rahul')) {
+              localStorage.setItem('foodpulse_user', JSON.stringify(data.data));
+              return data.data;
+            }
+            return prev;
+          });
+        }
+      })
+      .catch(() => {});
+
     fetch('/api/restaurants')
       .then(res => res.json())
       .then(data => {

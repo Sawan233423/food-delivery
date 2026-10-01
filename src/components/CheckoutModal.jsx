@@ -259,7 +259,7 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
             <div className="flex justify-between items-end text-xs">
               <div>
                 <span className="text-[10px] text-slate-400 uppercase font-semibold block">Cardholder</span>
-                <span className="font-bold text-white tracking-wide">{currentUser?.name || 'Rahul Sharma'}</span>
+                <span className="font-bold text-white tracking-wide">{currentUser?.name || 'SAWAN'}</span>
               </div>
               <div>
                 <span className="text-[10px] text-slate-400 uppercase font-semibold block">Expires</span>

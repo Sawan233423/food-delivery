@@ -20,7 +20,7 @@ function getDB() {
       users: [
         {
           id: 'user-01',
-          name: 'Rahul Sharma',
+          name: 'SAWAN',
           phone: '+91 98765 43210',
           walletCoins: 240,
           addresses: [
