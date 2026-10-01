@@ -9,9 +9,6 @@ import { CheckoutModal } from './components/CheckoutModal';
 import { LiveOrderTracker } from './components/LiveOrderTracker';
 import { KitchenDashboard } from './components/KitchenDashboard';
 import { RiderDashboard } from './components/RiderDashboard';
-import { SuperAdminDashboard } from './components/SuperAdminDashboard';
-import { ClientShowcaseBanner } from './components/ClientShowcaseBanner';
-import { GetAppModal } from './components/GetAppModal';
 import { 
   SlidersHorizontal, 
   Sparkles, 
@@ -44,7 +41,6 @@ const MainContent = () => {
   const [isOffersModalOpen, setIsOffersModalOpen] = useState(false);
   const [sortBy, setSortBy] = useState('relevance'); // relevance | rating | deliveryTime | cost
   const [copiedCoupon, setCopiedCoupon] = useState(null);
-  const [isGetAppOpen, setIsGetAppOpen] = useState(false);
   const [isTrackerCollapsed, setIsTrackerCollapsed] = useState(false);
 
   // Filter restaurants
@@ -90,7 +86,6 @@ const MainContent = () => {
       {/* Navigation Bar */}
       <Navbar 
         onOpenOffers={() => setIsOffersModalOpen(true)} 
-        onOpenGetApp={() => setIsGetAppOpen(true)} 
       />
 
       {/* Main Body based on selected Role */}
@@ -211,9 +206,6 @@ const MainContent = () => {
 
             </div>
 
-            {/* Turnkey App Development Showcase Banner for Business Clients */}
-            <ClientShowcaseBanner onOpenGetApp={() => setIsGetAppOpen(true)} />
-
           </div>
         )}
 
@@ -222,9 +214,6 @@ const MainContent = () => {
 
         {/* RIDER APP ROLE (Accessed from footer) */}
         {activeRole === 'rider' && <RiderDashboard />}
-
-        {/* SUPER ADMIN BUSINESS PORTAL (Accessed from footer) */}
-        {activeRole === 'admin' && <SuperAdminDashboard />}
 
       </main>
 
@@ -382,13 +371,6 @@ const MainContent = () => {
                   <span>Delivery Fleet Login</span>
                   <ChevronRight className="w-3 h-3" />
                 </li>
-                <li 
-                  onClick={() => setActiveRole('admin')}
-                  className="hover:text-amber-400 cursor-pointer transition-colors flex items-center gap-1 font-bold text-amber-400"
-                >
-                  <span>👑 Super Admin Business Console</span>
-                  <ChevronRight className="w-3 h-3" />
-                </li>
                 <li className="hover:text-white cursor-pointer transition-colors">Partner With Us</li>
                 <li className="hover:text-white cursor-pointer transition-colors">Drive With Us</li>
               </ul>
@@ -427,26 +409,6 @@ const MainContent = () => {
           </div>
         </div>
       )}
-
-      {/* Floating Lead Generation Button for visitors who want to buy/build this app */}
-      <div className="fixed bottom-6 right-6 z-30 animate-slide-up">
-        <button
-          onClick={() => setIsGetAppOpen(true)}
-          className="bg-slate-900 hover:bg-black text-white font-extrabold text-xs px-5 py-3.5 rounded-full shadow-2xl border-2 border-orange-500/60 flex items-center gap-2.5 transition-all hover:scale-105 active:scale-95 group"
-        >
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span>Want an App Like This Built?</span>
-          <span className="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">
-            Get Quote
-          </span>
-        </button>
-      </div>
-
-      {/* Turnkey Lead Generation Modal */}
-      <GetAppModal
-        isOpen={isGetAppOpen}
-        onClose={() => setIsGetAppOpen(false)}
-      />
 
     </div>
   );

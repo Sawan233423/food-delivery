@@ -12,7 +12,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
-export const Navbar = ({ onOpenOffers, onOpenGetApp }) => {
+export const Navbar = ({ onOpenOffers }) => {
   const { 
     cart, 
     setIsCartOpen, 
@@ -144,16 +144,6 @@ export const Navbar = ({ onOpenOffers, onOpenGetApp }) => {
                 <Percent className="w-4 h-4 text-orange-500" />
                 <span>Offers</span>
                 <span className="bg-orange-500 text-white text-[10px] px-1.5 py-0.2 rounded-full font-extrabold">NEW</span>
-              </button>
-
-              {/* Get This App CTA for Visitors */}
-              <button
-                onClick={onOpenGetApp}
-                className="hidden md:flex items-center gap-1.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-3.5 py-2 rounded-xl text-xs font-extrabold shadow-sm hover:scale-105 active:scale-95 transition-all"
-                title="Want this food delivery app built for your business?"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span>Get This App</span>
               </button>
 
               {/* User Account / Profile */}
