@@ -68,6 +68,23 @@
         }
       ],
       "favorites": []
+    },
+    {
+      "id": "user-1790884473281",
+      "name": "SAWAN",
+      "phone": "+91 9876543210",
+      "walletCoins": 100,
+      "addresses": [
+        {
+          "tag": "Home",
+          "text": "Plot 42, Green Avenue, Sector 18",
+          "coords": {
+            "x": 440,
+            "y": 390
+          }
+        }
+      ],
+      "favorites": []
     }
   ],
   "restaurants": [
@@ -1164,6 +1181,408 @@
   ],
   "orders": [
     {
+      "id": "ORD-9201",
+      "userId": "user-01",
+      "restaurant": {
+        "id": "resto-3",
+        "name": "Burger & Co. Craft Shack",
+        "cuisine": [
+          "Gourmet Burgers",
+          "Crispy Fries",
+          "Thick Shakes",
+          "Burgers"
+        ],
+        "rating": 4.5,
+        "reviewsCount": "1.9k+",
+        "deliveryTimeMin": 25,
+        "distanceKm": 2.8,
+        "costForTwo": 350,
+        "offer": "50% OFF up to ₹100",
+        "couponCode": "BURGER50",
+        "pureVeg": false,
+        "promoted": true,
+        "banner": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
+        "address": "Corner Bay 9, Cyber Park Boulevard",
+        "coords": {
+          "x": 160,
+          "y": 320
+        },
+        "gps": {
+          "lat": 28.56,
+          "lng": 77.335
+        },
+        "menu": [
+          {
+            "id": "bc-1",
+            "name": "The Smokey BBQ Bacon Cheeseburger",
+            "category": "burger",
+            "price": 279,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.7,
+            "ratingCount": 1100,
+            "description": "Smashed juicy patty, sharp cheddar, crispy smoked bacon, caramelized onion jam, and smokey chipotle mayo in toasted brioche.",
+            "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-2",
+            "name": "Crispy Truffle Mushroom Crunch Burger",
+            "category": "burger",
+            "price": 249,
+            "isVeg": true,
+            "isBestseller": true,
+            "rating": 4.6,
+            "ratingCount": 780,
+            "description": "Golden panko-crusted portobello mushroom stuffed with molten cheese, truffle garlic sauce, fresh arugula, and pickles.",
+            "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-3",
+            "name": "Classic Crispy Chicken Zinger Burger",
+            "category": "burger",
+            "price": 239,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.8,
+            "ratingCount": 1540,
+            "description": "Extra crunchy fried chicken breast fillet coated in hot spices, thousand island glaze, crispy iceberg lettuce in sesame bun.",
+            "image": "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-4",
+            "name": "Peri-Peri Paneer Crunch Burger",
+            "category": "burger",
+            "price": 229,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 690,
+            "description": "Thick marinated cottage cheese steak flash-fried to golden crispness, tossed in African peri-peri seasoning and creamy garlic mayo.",
+            "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-5",
+            "name": "Spicy Mexican Jalapeño Nacho Burger",
+            "category": "burger",
+            "price": 239,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 520,
+            "description": "Spiced black bean and sweet corn patty, crunchy tortilla nachos, pickled jalapeño slices, salsa roja, and molten cheese.",
+            "image": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-6",
+            "name": "Ultimate Double Decker Crispy Patty Burger",
+            "category": "burger",
+            "price": 319,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.9,
+            "ratingCount": 880,
+            "description": "Two gigantic crispy chicken patties stacked with double melted American cheddar, gherkins, and house special secret burger sauce.",
+            "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-7",
+            "name": "Peri-Peri Loaded Cheese Fries",
+            "category": "starters",
+            "price": 159,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 920,
+            "description": "Skin-on crispy fries tossed in fiery African peri-peri dust, topped with warm liquid cheese sauce and jalapeños.",
+            "image": "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-8",
+            "name": "Crispy Golden Onion Rings with Garlic Dip",
+            "category": "starters",
+            "price": 139,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.4,
+            "ratingCount": 410,
+            "description": "Thick hand-cut Spanish onion rings coated in seasoned batter and panko crumbs, served with garlic herb aioli.",
+            "image": "https://images.unsplash.com/photo-1639024471285-056685704d22?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-9",
+            "name": "Salted Caramel Hazelnut Thickshake",
+            "category": "beverages",
+            "price": 189,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.8,
+            "ratingCount": 390,
+            "description": "Rich vanilla ice cream blended with roasted crushed hazelnuts, English toffee caramel, and sea salt flakes.",
+            "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "bc-10",
+            "name": "Oreo Overload Monster Shake",
+            "category": "beverages",
+            "price": 199,
+            "isVeg": true,
+            "isBestseller": true,
+            "rating": 4.9,
+            "ratingCount": 650,
+            "description": "Creamy cookies and cream shake with blended Oreo crumbles, chocolate drizzle, and whipped cream crown.",
+            "image": "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&auto=format&fit=crop&q=80"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "bc-1",
+          "name": "The Smokey BBQ Bacon Cheeseburger",
+          "category": "burger",
+          "price": 279,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.7,
+          "ratingCount": 1100,
+          "description": "Smashed juicy patty, sharp cheddar, crispy smoked bacon, caramelized onion jam, and smokey chipotle mayo in toasted brioche.",
+          "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80",
+          "restaurant": {
+            "id": "resto-3",
+            "name": "Burger & Co. Craft Shack",
+            "rating": 4.5,
+            "deliveryTimeMin": 25,
+            "banner": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
+            "fullResto": {
+              "id": "resto-3",
+              "name": "Burger & Co. Craft Shack",
+              "cuisine": [
+                "Gourmet Burgers",
+                "Crispy Fries",
+                "Thick Shakes",
+                "Burgers"
+              ],
+              "rating": 4.5,
+              "reviewsCount": "1.9k+",
+              "deliveryTimeMin": 25,
+              "distanceKm": 2.8,
+              "costForTwo": 350,
+              "offer": "50% OFF up to ₹100",
+              "couponCode": "BURGER50",
+              "pureVeg": false,
+              "promoted": true,
+              "banner": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=80",
+              "address": "Corner Bay 9, Cyber Park Boulevard",
+              "coords": {
+                "x": 160,
+                "y": 320
+              },
+              "gps": {
+                "lat": 28.56,
+                "lng": 77.335
+              },
+              "menu": [
+                {
+                  "id": "bc-1",
+                  "name": "The Smokey BBQ Bacon Cheeseburger",
+                  "category": "burger",
+                  "price": 279,
+                  "isVeg": false,
+                  "isBestseller": true,
+                  "rating": 4.7,
+                  "ratingCount": 1100,
+                  "description": "Smashed juicy patty, sharp cheddar, crispy smoked bacon, caramelized onion jam, and smokey chipotle mayo in toasted brioche.",
+                  "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-2",
+                  "name": "Crispy Truffle Mushroom Crunch Burger",
+                  "category": "burger",
+                  "price": 249,
+                  "isVeg": true,
+                  "isBestseller": true,
+                  "rating": 4.6,
+                  "ratingCount": 780,
+                  "description": "Golden panko-crusted portobello mushroom stuffed with molten cheese, truffle garlic sauce, fresh arugula, and pickles.",
+                  "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-3",
+                  "name": "Classic Crispy Chicken Zinger Burger",
+                  "category": "burger",
+                  "price": 239,
+                  "isVeg": false,
+                  "isBestseller": true,
+                  "rating": 4.8,
+                  "ratingCount": 1540,
+                  "description": "Extra crunchy fried chicken breast fillet coated in hot spices, thousand island glaze, crispy iceberg lettuce in sesame bun.",
+                  "image": "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-4",
+                  "name": "Peri-Peri Paneer Crunch Burger",
+                  "category": "burger",
+                  "price": 229,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 690,
+                  "description": "Thick marinated cottage cheese steak flash-fried to golden crispness, tossed in African peri-peri seasoning and creamy garlic mayo.",
+                  "image": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-5",
+                  "name": "Spicy Mexican Jalapeño Nacho Burger",
+                  "category": "burger",
+                  "price": 239,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.5,
+                  "ratingCount": 520,
+                  "description": "Spiced black bean and sweet corn patty, crunchy tortilla nachos, pickled jalapeño slices, salsa roja, and molten cheese.",
+                  "image": "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-6",
+                  "name": "Ultimate Double Decker Crispy Patty Burger",
+                  "category": "burger",
+                  "price": 319,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.9,
+                  "ratingCount": 880,
+                  "description": "Two gigantic crispy chicken patties stacked with double melted American cheddar, gherkins, and house special secret burger sauce.",
+                  "image": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-7",
+                  "name": "Peri-Peri Loaded Cheese Fries",
+                  "category": "starters",
+                  "price": 159,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.5,
+                  "ratingCount": 920,
+                  "description": "Skin-on crispy fries tossed in fiery African peri-peri dust, topped with warm liquid cheese sauce and jalapeños.",
+                  "image": "https://images.unsplash.com/photo-1585109649139-366815a0d713?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-8",
+                  "name": "Crispy Golden Onion Rings with Garlic Dip",
+                  "category": "starters",
+                  "price": 139,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.4,
+                  "ratingCount": 410,
+                  "description": "Thick hand-cut Spanish onion rings coated in seasoned batter and panko crumbs, served with garlic herb aioli.",
+                  "image": "https://images.unsplash.com/photo-1639024471285-056685704d22?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-9",
+                  "name": "Salted Caramel Hazelnut Thickshake",
+                  "category": "beverages",
+                  "price": 189,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.8,
+                  "ratingCount": 390,
+                  "description": "Rich vanilla ice cream blended with roasted crushed hazelnuts, English toffee caramel, and sea salt flakes.",
+                  "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "bc-10",
+                  "name": "Oreo Overload Monster Shake",
+                  "category": "beverages",
+                  "price": 199,
+                  "isVeg": true,
+                  "isBestseller": true,
+                  "rating": 4.9,
+                  "ratingCount": 650,
+                  "description": "Creamy cookies and cream shake with blended Oreo crumbles, chocolate drizzle, and whipped cream crown.",
+                  "image": "https://images.unsplash.com/photo-1577805947697-89e18249d767?w=400&auto=format&fit=crop&q=80"
+                }
+              ]
+            }
+          },
+          "restaurantId": "resto-3",
+          "restaurantName": "Burger & Co. Craft Shack",
+          "restaurantCoords": {
+            "x": 160,
+            "y": 320
+          },
+          "qty": 2
+        }
+      ],
+      "bill": {
+        "itemTotal": 558,
+        "deliveryFee": 35,
+        "platformFee": 7,
+        "taxes": 28,
+        "discount": 120,
+        "tip": 20,
+        "totalToPay": 528
+      },
+      "paymentMethod": "UPI (GPAY / PHONEPE)",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Lotus Greens, Central Boulevard",
+        "coords": {
+          "x": 440,
+          "y": 390
+        }
+      },
+      "specialInstructions": "",
+      "status": "CONFIRMED",
+      "assignedRider": {
+        "id": "rider-01",
+        "name": "Rahul Sharma",
+        "phone": "+91 98765 43210",
+        "rating": 4.9,
+        "completedOrders": 1420,
+        "vehicle": "Hero Splendor (DL 04 EF 7821)",
+        "currentCoords": {
+          "x": 250,
+          "y": 180
+        },
+        "distanceToRestoKm": 0.8,
+        "etaToRestoMin": 4,
+        "status": "AVAILABLE",
+        "photo": "/images/rider_rahul.jpg",
+        "acceptanceRate": "98%",
+        "matchingScore": 94.5
+      },
+      "deliveryPin": "3178",
+      "etaMin": 24,
+      "createdAt": "2026-10-01T20:00:22.756Z",
+      "timeline": [
+        {
+          "step": "Order Placed",
+          "time": "Just now",
+          "done": true
+        },
+        {
+          "step": "Kitchen Preparing",
+          "time": "In 5 mins",
+          "done": false
+        },
+        {
+          "step": "Rider Picked Up",
+          "time": "In 12 mins",
+          "done": false
+        },
+        {
+          "step": "Out for Delivery",
+          "time": "In 18 mins",
+          "done": false
+        },
+        {
+          "step": "Delivered",
+          "time": "In 24 mins",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "ORD-2330",
       "userId": "user-01",
       "restaurant": {
@@ -2163,7 +2582,7 @@
   "activeOtps": {
     "9876543210": {
       "otp": "1234",
-      "expiresAt": 1790880234423
+      "expiresAt": 1790884922109
     },
     "9696862334": {
       "otp": "1234",

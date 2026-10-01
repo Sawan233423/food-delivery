@@ -63,10 +63,23 @@ function saveDB(data) {
   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
 }
 
+// ---------------- HEALTH CHECK API ---------------- //
+app.get('/api/health', (req, res) => {
+  res.json({ success: true, status: 'HEALTHY', timestamp: new Date().toISOString() });
+});
+
 // ---------------- RESTAURANTS API ---------------- //
 app.get('/api/restaurants', (req, res) => {
   const db = getDB();
   res.json({ success: true, data: db.restaurants });
+});
+
+app.get('/api/coupons', (req, res) => {
+  res.json({ success: true, data: AVAILABLE_COUPONS });
+});
+
+app.get('/api/riders', (req, res) => {
+  res.json({ success: true, data: RIDERS_POOL });
 });
 
 app.get('/api/restaurants/:id', (req, res) => {
@@ -234,7 +247,19 @@ app.post('/api/payment/create-intent', (req, res) => {
   });
 });
 
-const PORT = 5000;
+// ---------------- SERVE STATIC FRONTEND IN PRODUCTION ---------------- //
+const distPath = path.join(__dirname, '../dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api')) {
+      return res.sendFile(path.join(distPath, 'index.html'));
+    }
+    next();
+  });
+}
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`FoodPulse Express API Server running on http://localhost:${PORT}`);
 });
