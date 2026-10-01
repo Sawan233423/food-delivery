@@ -13,54 +13,75 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Initialize Persistent DB if not present
+// Initialize Persistent DB with in-memory fallback for serverless (Vercel)
+let inMemoryDB = null;
+
 function getDB() {
-  if (!fs.existsSync(DB_FILE)) {
-    const initialData = {
-      users: [
-        {
-          id: 'user-01',
-          name: 'SAWAN',
-          phone: '+91 98765 43210',
-          walletCoins: 240,
-          addresses: [
-            { tag: 'Home', text: 'Flat 402, Lotus Greens, Central Boulevard', coords: { x: 440, y: 390 } },
-            { tag: 'Office', text: 'Tower B, Tech Innovation Park, Sector 62', coords: { x: 390, y: 340 } },
-            { tag: 'Other', text: 'Villa 12, Palm Meadows, Lake View', coords: { x: 470, y: 310 } }
-          ],
-          favorites: ['resto-1']
-        }
-      ],
-      restaurants: RESTAURANTS,
-      orders: [
-        {
-          id: 'ORD-9421',
-          userId: 'user-01',
-          restaurant: {
-            id: 'resto-1',
-            name: 'Dum Safar Biryani House'
-          },
-          items: [
-            { id: 'ds-1', name: 'Royal Dum Hyderabadi Chicken Biryani', price: 349, qty: 2 }
-          ],
-          totalPaid: 638,
-          paymentMethod: 'UPI (GPay)',
-          date: 'Yesterday, 8:45 PM',
-          status: 'DELIVERED',
-          deliveryPin: '4821',
-          deliveryAddress: { tag: 'Home', text: 'Flat 402, Lotus Greens, Central Boulevard' }
-        }
-      ],
-      activeOtps: {}
-    };
-    fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2));
-    return initialData;
+  if (inMemoryDB) return inMemoryDB;
+
+  try {
+    if (fs.existsSync(DB_FILE)) {
+      inMemoryDB = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+      return inMemoryDB;
+    }
+  } catch (err) {
+    console.warn('Could not read db.json from disk, using fallback data:', err.message);
   }
-  return JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+
+  inMemoryDB = {
+    users: [
+      {
+        id: 'user-01',
+        name: 'SAWAN',
+        phone: '+91 98765 43210',
+        walletCoins: 240,
+        addresses: [
+          { tag: 'Home', text: 'Flat 402, Lotus Greens, Central Boulevard', coords: { x: 440, y: 390 } },
+          { tag: 'Office', text: 'Tower B, Tech Innovation Park, Sector 62', coords: { x: 390, y: 340 } },
+          { tag: 'Other', text: 'Villa 12, Palm Meadows, Lake View', coords: { x: 470, y: 310 } }
+        ],
+        favorites: ['resto-1']
+      }
+    ],
+    restaurants: RESTAURANTS,
+    orders: [
+      {
+        id: 'ORD-9421',
+        userId: 'user-01',
+        restaurant: {
+          id: 'resto-1',
+          name: 'Dum Safar Biryani House'
+        },
+        items: [
+          { id: 'ds-1', name: 'Royal Dum Hyderabadi Chicken Biryani', price: 349, qty: 2 }
+        ],
+        totalPaid: 638,
+        paymentMethod: 'UPI (GPay)',
+        date: 'Yesterday, 8:45 PM',
+        status: 'DELIVERED',
+        deliveryPin: '4821',
+        deliveryAddress: { tag: 'Home', text: 'Flat 402, Lotus Greens, Central Boulevard' }
+      }
+    ],
+    activeOtps: {}
+  };
+
+  try {
+    fs.writeFileSync(DB_FILE, JSON.stringify(inMemoryDB, null, 2));
+  } catch {
+    // Read-only filesystem in cloud serverless
+  }
+
+  return inMemoryDB;
 }
 
 function saveDB(data) {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+  inMemoryDB = data;
+  try {
+    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+  } catch {
+    // Handled gracefully in serverless environment
+  }
 }
 
 // ---------------- HEALTH CHECK API ---------------- //
@@ -259,7 +280,11 @@ if (fs.existsSync(distPath)) {
   });
 }
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`FoodPulse Express API Server running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`FoodPulse Express API Server running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
