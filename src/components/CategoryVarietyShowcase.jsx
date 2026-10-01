@@ -70,6 +70,17 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
 
   if (selectedCategory === 'all') return null;
 
+  const categoryDescriptions = {
+    burger: 'Smashed double patties, crispy chicken fillets, and gourmet melts prepared fresh.',
+    biryani: 'Slow-cooked handi biryanis layered with fragrant basmati, desi ghee, and royal spices.',
+    pizza: 'Woodfired sourdough crusts loaded with fresh mozzarella and premium toppings.',
+    chinese: 'Wok-tossed noodles, fried rice bowls, and steamed dimsums with spicy chili oils.',
+    healthy: 'Nutrient-rich protein bowls, organic salads, and fresh smoothies.',
+    dessert: 'Warm fudge cakes, molten lava cups, crispy waffles, and artisanal sweets.',
+    rolls: 'Flaky layered kathi rolls, seekh kebabs, and wraps with house mint chutney.',
+    beverages: 'Thick monster shakes, cold brews, and sparkling fruit coolers.'
+  };
+
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       {/* Category Hero Header Banner */}
@@ -79,20 +90,20 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs uppercase font-extrabold tracking-widest bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white inline-flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-                <span>Rich Variety Showcase</span>
+                <span>Handpicked Selection</span>
               </span>
               <span className="text-xs font-bold bg-white/25 px-2.5 py-1 rounded-full text-white">
-                {allCategoryDishes.length} Varieties Available
+                {allCategoryDishes.length} Dishes
               </span>
             </div>
 
             <h2 className="text-2xl sm:text-4xl font-black font-display tracking-tight text-white flex items-center gap-3">
               <span>{categoryInfo.icon}</span>
-              <span>{categoryInfo.name} Extravaganza</span>
+              <span>{categoryInfo.name}</span>
             </h2>
 
             <p className="text-white/90 text-xs sm:text-sm mt-2 max-w-2xl font-medium leading-relaxed">
-              Explore our wide variety of chef-crafted {categoryInfo.name.toLowerCase()}! From bestsellers to gourmet specialties, order directly or view each restaurant's dedicated kitchen.
+              {categoryDescriptions[selectedCategory] || `Browse our popular ${categoryInfo.name.toLowerCase()} options from top kitchens nearby.`}
             </p>
           </div>
 

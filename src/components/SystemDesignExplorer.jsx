@@ -32,19 +32,19 @@ export const SystemDesignExplorer = () => {
             <div className="flex items-center gap-2">
               <span className="text-xs uppercase font-extrabold tracking-widest bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-full flex items-center gap-1.5">
                 <Cpu className="w-3.5 h-3.5" />
-                System Architecture Specification
+                Architecture & Engineering Notes
               </span>
               <span className="text-xs text-indigo-300 font-semibold bg-indigo-950/60 px-3 py-1 rounded-full border border-indigo-800/50 flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Original Engineering Research (15 Modules)</span>
+                <span>Author: Sawan • Core Microservices</span>
               </span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-black font-display tracking-tight text-white mt-2">
-              Food Delivery App System Architecture
+              FoodPulse Systems & Backend Architecture
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl leading-relaxed">
-              Comprehensive architectural analysis and live engineering breakdown of the 15 core microservices for handling 1M+ concurrent users, sub-second restaurant discovery, dynamic dispatching, and real-time Kafka event streams.
+              Engineering breakdown of how we architected FoodPulse for scale — dynamic rider dispatching, Kafka event pipelines, in-memory pricing, and real-time GPS tracking.
             </p>
           </div>
 
