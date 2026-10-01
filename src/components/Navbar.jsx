@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { 
   ShoppingBag, 
@@ -9,10 +9,13 @@ import {
   X,
   ChevronDown,
   ArrowLeft,
-  Sparkles
+  Sparkles,
+  Mic
 } from 'lucide-react';
+import { VoiceSearchModal } from './VoiceSearchModal';
+import { SearchDropdown } from './SearchDropdown';
 
-export const Navbar = ({ onOpenOffers }) => {
+export const Navbar = ({ onOpenOffers, onSelectRestaurant }) => {
   const { 
     cart, 
     setIsCartOpen, 
@@ -33,17 +36,33 @@ export const Navbar = ({ onOpenOffers }) => {
 
   const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isVoiceSearchOpen, setIsVoiceSearchOpen] = useState(false);
+  const [showSearchDropdown, setShowSearchDropdown] = useState(false);
+  const searchContainerRef = useRef(null);
 
-  // Close modals on Escape key
-  React.useEffect(() => {
+  // Close modals on Escape key or click outside search
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         setIsAddressModalOpen(false);
         setIsAuthModalOpen(false);
+        setIsVoiceSearchOpen(false);
+        setShowSearchDropdown(false);
       }
     };
+
+    const handleClickOutside = (e) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target)) {
+        setShowSearchDropdown(false);
+      }
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -112,24 +131,55 @@ export const Navbar = ({ onOpenOffers }) => {
               </div>
             </div>
 
-            {/* Center Search Bar */}
-            <div className="flex-1 max-w-lg hidden md:flex items-center gap-3">
+            {/* Center Search Bar with Voice Engine */}
+            <div ref={searchContainerRef} className="flex-1 max-w-lg hidden md:flex items-center gap-3 relative">
               <div className="relative w-full">
                 <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                 <input
                   type="text"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for restaurants, cuisines, or a dish..."
-                  className="w-full pl-10 pr-9 py-2.5 bg-slate-100/90 border border-slate-200 rounded-full text-xs sm:text-sm placeholder:text-slate-400 focus:bg-white focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all font-medium"
+                  onFocus={() => setShowSearchDropdown(true)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowSearchDropdown(true);
+                  }}
+                  placeholder="Search for biryani, pizza, burger, rolls..."
+                  className="w-full pl-10 pr-20 py-2.5 bg-slate-100/90 border border-slate-200 rounded-full text-xs sm:text-sm placeholder:text-slate-400 focus:bg-white focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none transition-all font-medium"
                 />
-                {searchQuery && (
-                  <button 
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5"
+                
+                <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                  {searchQuery && (
+                    <button 
+                      type="button"
+                      onClick={() => {
+                        setSearchQuery('');
+                        setShowSearchDropdown(false);
+                      }}
+                      className="text-slate-400 hover:text-slate-600 p-0.5"
+                      title="Clear search"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                  
+                  {/* Voice Search Mic Button */}
+                  <button
+                    type="button"
+                    onClick={() => setIsVoiceSearchOpen(true)}
+                    className="w-7 h-7 rounded-full bg-orange-100 text-orange-600 hover:bg-orange-600 hover:text-white flex items-center justify-center transition-all shadow-sm"
+                    title="Voice Search (Speak dish name) 🎙️"
                   >
-                    <X className="w-3.5 h-3.5" />
+                    <Mic className="w-3.5 h-3.5" />
                   </button>
+                </div>
+
+                {/* Instant Search Engine Dropdown */}
+                {showSearchDropdown && searchQuery.trim() && (
+                  <SearchDropdown
+                    query={searchQuery}
+                    onClose={() => setShowSearchDropdown(false)}
+                    onSelectRestaurant={onSelectRestaurant}
+                  />
                 )}
               </div>
 
@@ -150,6 +200,16 @@ export const Navbar = ({ onOpenOffers }) => {
             {/* Right Action Buttons */}
             <div className="flex items-center gap-2 sm:gap-3">
               
+              {/* Mobile Voice Search Button */}
+              <button
+                type="button"
+                onClick={() => setIsVoiceSearchOpen(true)}
+                className="md:hidden p-2 rounded-xl bg-orange-50 text-orange-600 border border-orange-200 hover:bg-orange-100 transition-colors flex items-center justify-center"
+                title="Search with Voice 🎙️"
+              >
+                <Mic className="w-4 h-4" />
+              </button>
+
               {/* Offers Button */}
               <button
                 onClick={onOpenOffers}
@@ -363,6 +423,16 @@ export const Navbar = ({ onOpenOffers }) => {
           </div>
         </div>
       )}
+
+      {/* Voice Search Speech Recognition Modal */}
+      <VoiceSearchModal
+        isOpen={isVoiceSearchOpen}
+        onClose={() => setIsVoiceSearchOpen(false)}
+        onSearch={(query) => {
+          setSearchQuery(query);
+          setShowSearchDropdown(true);
+        }}
+      />
     </>
   );
 };

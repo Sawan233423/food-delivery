@@ -484,6 +484,177 @@
   ],
   "orders": [
     {
+      "id": "ORD-4882",
+      "userId": "user-01",
+      "restaurant": {
+        "id": "resto-1",
+        "name": "Dum Safar Biryani House",
+        "cuisine": [
+          "Hyderabadi",
+          "Mughlai",
+          "Kebabs"
+        ],
+        "rating": 4.6,
+        "reviewsCount": "3.4k+",
+        "deliveryTimeMin": 28,
+        "distanceKm": 2.1,
+        "costForTwo": 450,
+        "offer": "60% OFF up to ₹120",
+        "couponCode": "STEAL60",
+        "pureVeg": false,
+        "promoted": true,
+        "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+        "address": "Plot 42, Sector 18, Central Food District",
+        "coords": {
+          "x": 220,
+          "y": 140
+        },
+        "gps": {
+          "lat": 28.57,
+          "lng": 77.32
+        },
+        "menu": [
+          {
+            "id": "ds-1",
+            "name": "Royal Dum Hyderabadi Chicken Biryani",
+            "category": "biryani",
+            "price": 349,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.8,
+            "ratingCount": 1420,
+            "description": "Authentic long-grain basmati cooked with tender chicken pieces marinated in secret spices and slow-cooked in sealed clay handi.",
+            "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-2",
+            "name": "Nawabi Paneer Dum Biryani",
+            "category": "biryani",
+            "price": 299,
+            "isVeg": true,
+            "isBestseller": true,
+            "rating": 4.7,
+            "ratingCount": 890,
+            "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint.",
+            "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-3",
+            "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+            "category": "starters",
+            "price": 289,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 420,
+            "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+            "image": "/images/galouti_kebab.jpg"
+          },
+          {
+            "id": "ds-4",
+            "name": "Shahi Tukda with Rabri",
+            "category": "dessert",
+            "price": 149,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 310,
+            "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+            "image": "/images/shahi_tukda.jpg"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "category": "biryani",
+          "price": 349,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 1420,
+          "description": "Authentic long-grain basmati cooked with tender chicken pieces marinated in secret spices and slow-cooked in sealed clay handi.",
+          "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80",
+          "restaurantId": "resto-1",
+          "restaurantName": "Dum Safar Biryani House",
+          "restaurantCoords": {
+            "x": 220,
+            "y": 140
+          },
+          "qty": 1
+        }
+      ],
+      "bill": {
+        "itemTotal": 349,
+        "deliveryFee": 35,
+        "platformFee": 7,
+        "taxes": 17,
+        "discount": 120,
+        "tip": 20,
+        "totalToPay": 308
+      },
+      "paymentMethod": "COD",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Lotus Greens, Central Boulevard",
+        "coords": {
+          "x": 440,
+          "y": 390
+        }
+      },
+      "specialInstructions": "",
+      "status": "CONFIRMED",
+      "assignedRider": {
+        "id": "rider-01",
+        "name": "Rahul Sharma",
+        "phone": "+91 98765 43210",
+        "rating": 4.9,
+        "completedOrders": 1420,
+        "vehicle": "Hero Splendor (DL 04 EF 7821)",
+        "currentCoords": {
+          "x": 250,
+          "y": 180
+        },
+        "distanceToRestoKm": 0.8,
+        "etaToRestoMin": 4,
+        "status": "AVAILABLE",
+        "photo": "/images/rider_rahul.jpg",
+        "acceptanceRate": "98%",
+        "matchingScore": 94.5
+      },
+      "deliveryPin": "5317",
+      "etaMin": 24,
+      "createdAt": "2026-10-01T19:14:43.800Z",
+      "timeline": [
+        {
+          "step": "Order Placed",
+          "time": "Just now",
+          "done": true
+        },
+        {
+          "step": "Kitchen Preparing",
+          "time": "In 5 mins",
+          "done": false
+        },
+        {
+          "step": "Rider Picked Up",
+          "time": "In 12 mins",
+          "done": false
+        },
+        {
+          "step": "Out for Delivery",
+          "time": "In 18 mins",
+          "done": false
+        },
+        {
+          "step": "Delivered",
+          "time": "In 24 mins",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "ORD-1757",
       "userId": "user-01",
       "restaurant": {

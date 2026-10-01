@@ -101,6 +101,7 @@ const MainContent = () => {
       {/* Navigation Bar */}
       <Navbar 
         onOpenOffers={() => setIsOffersModalOpen(true)} 
+        onSelectRestaurant={(r) => setSelectedResto(r)}
       />
 
       {/* Main Body based on selected Role */}
