@@ -20,6 +20,15 @@ export const CartDrawer = ({ onProceedCheckout }) => {
 
   const [inputCode, setInputCode] = useState('');
 
+  // Close Cart on Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsCartOpen(false);
+    };
+    if (isCartOpen) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isCartOpen, setIsCartOpen]);
+
   if (!isCartOpen) return null;
 
   const bill = calculateBill();
@@ -43,16 +52,26 @@ export const CartDrawer = ({ onProceedCheckout }) => {
         <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col animate-slide-up">
           
           {/* Cart Header */}
-          <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
-            <div>
-              <h3 className="font-extrabold text-lg text-slate-900 font-display">
-                Your Order Bag 🛍️
-              </h3>
-              {cart.length > 0 && (
-                <p className="text-xs text-slate-500 font-semibold mt-0.5">
-                  From <span className="text-orange-600 font-bold">{cart[0].restaurantName}</span>
-                </p>
-              )}
+          <div className="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/90">
+            <div className="flex items-center gap-2.5">
+              <button
+                type="button"
+                onClick={() => setIsCartOpen(false)}
+                className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-white hover:bg-slate-200 text-slate-800 font-extrabold text-xs border border-slate-200 transition-colors shadow-sm"
+                title="Continue Shopping"
+              >
+                <span>← Back</span>
+              </button>
+              <div>
+                <h3 className="font-extrabold text-base sm:text-lg text-slate-900 font-display leading-tight">
+                  Your Order Bag 🛍️
+                </h3>
+                {cart.length > 0 && (
+                  <p className="text-[11px] text-slate-500 font-semibold truncate max-w-[170px]">
+                    From <span className="text-orange-600 font-bold">{cart[0].restaurantName}</span>
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="flex items-center gap-2">

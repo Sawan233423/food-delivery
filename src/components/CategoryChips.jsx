@@ -13,9 +13,20 @@ export const CategoryChips = () => {
           <h2 className="text-xl font-extrabold text-slate-900 tracking-tight">
             What's on your mind? 🍕
           </h2>
-          <span className="text-xs font-semibold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full">
-            Fast Delivery • 20-30 Mins
-          </span>
+          <div className="flex items-center gap-2">
+            {selectedCategory !== 'all' && (
+              <button
+                type="button"
+                onClick={() => setSelectedCategory('all')}
+                className="text-xs font-bold text-orange-600 bg-orange-100 hover:bg-orange-200 px-3 py-1 rounded-full transition-colors flex items-center gap-1"
+              >
+                <span>✕ Clear Filter</span>
+              </button>
+            )}
+            <span className="text-xs font-semibold text-orange-600 bg-orange-50 px-2.5 py-1 rounded-full">
+              Fast Delivery • 20-30 Mins
+            </span>
+          </div>
         </div>
 
         {/* Scrollable Categories List */}
@@ -25,7 +36,8 @@ export const CategoryChips = () => {
             return (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => setSelectedCategory(isSelected ? 'all' : cat.id)}
+                title={isSelected ? 'Click to unselect' : `Filter by ${cat.name}`}
                 className={`flex flex-col items-center gap-2 group flex-shrink-0 transition-all ${
                   isSelected ? 'scale-105' : 'hover:scale-105'
                 }`}

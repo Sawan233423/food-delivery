@@ -22,6 +22,18 @@ export const LiveOrderTracker = () => {
   const [chatInput, setChatInput] = useState('');
   const [callRiderOpen, setCallRiderOpen] = useState(false);
 
+  // Close modals on Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setChatOpen(false);
+        setCallRiderOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   if (!activeOrder) return null;
 
   const steps = [
@@ -268,8 +280,18 @@ export const LiveOrderTracker = () => {
 
       {/* Rider Call Simulation Modal */}
       {callRiderOpen && activeOrder.assignedRider && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
-          <div className="bg-slate-900 border border-slate-700 w-full max-w-sm rounded-3xl p-6 text-center text-white shadow-2xl animate-slide-up">
+        <div 
+          onClick={(e) => { if (e.target === e.currentTarget) setCallRiderOpen(false); }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in"
+        >
+          <div className="bg-slate-900 border border-slate-700 w-full max-w-sm rounded-3xl p-6 text-center text-white shadow-2xl animate-slide-up relative">
+            <button
+              type="button"
+              onClick={() => setCallRiderOpen(false)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors"
+            >
+              ✕
+            </button>
             <img
               src={activeOrder.assignedRider.photo}
               alt={activeOrder.assignedRider.name}
@@ -294,7 +316,10 @@ export const LiveOrderTracker = () => {
 
       {/* In-App Chat Modal */}
       {chatOpen && activeOrder.assignedRider && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
+        <div 
+          onClick={(e) => { if (e.target === e.currentTarget) setChatOpen(false); }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in"
+        >
           <div className="bg-slate-900 border border-slate-700 w-full max-w-md rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[460px] animate-slide-up">
             <div className="p-4 bg-slate-800 flex items-center justify-between border-b border-slate-700">
               <div className="flex items-center gap-3">
@@ -310,8 +335,10 @@ export const LiveOrderTracker = () => {
                 </div>
               </div>
               <button
+                type="button"
                 onClick={() => setChatOpen(false)}
-                className="text-slate-400 hover:text-white p-1"
+                className="w-8 h-8 rounded-full bg-slate-700 text-slate-400 hover:text-white hover:bg-slate-600 flex items-center justify-center transition-colors"
+                title="Close Chat"
               >
                 ✕
               </button>

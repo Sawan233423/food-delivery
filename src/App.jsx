@@ -49,6 +49,15 @@ const MainContent = () => {
   const [copiedCoupon, setCopiedCoupon] = useState(null);
   const [isTrackerCollapsed, setIsTrackerCollapsed] = useState(false);
 
+  // Close Offers Modal on Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsOffersModalOpen(false);
+    };
+    if (isOffersModalOpen) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOffersModalOpen]);
+
   // Filter restaurants
   const filteredRestaurants = restaurants.filter((resto) => {
     // Search query matching restaurant name, cuisines, or dishes
@@ -225,22 +234,41 @@ const MainContent = () => {
 
       {/* Offers & Discounts Modal */}
       {isOffersModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 animate-slide-up">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-              <div className="flex items-center gap-2">
-                <Tag className="w-5 h-5 text-orange-500" />
-                <h3 className="font-extrabold text-xl text-slate-900 font-display">Available Offers & Deals</h3>
+        <div 
+          onClick={(e) => { if (e.target === e.currentTarget) setIsOffersModalOpen(false); }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in"
+        >
+          <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-slate-200 animate-slide-up max-h-[85vh] flex flex-col overflow-hidden">
+            
+            {/* Sticky Header */}
+            <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setIsOffersModalOpen(false)}
+                  className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-extrabold text-xs transition-colors"
+                >
+                  <span>← Back</span>
+                </button>
+                <div className="flex items-center gap-2">
+                  <Tag className="w-4 h-4 text-orange-500" />
+                  <h3 className="font-extrabold text-base sm:text-lg text-slate-900 font-display">
+                    Available Offers & Deals
+                  </h3>
+                </div>
               </div>
               <button 
+                type="button"
                 onClick={() => setIsOffersModalOpen(false)}
-                className="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center hover:bg-slate-200 transition-colors"
+                className="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:text-red-600 hover:bg-red-50 flex items-center justify-center transition-colors border border-slate-200"
+                title="Close"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <div className="mt-5 space-y-3">
+            {/* Scrollable Coupons */}
+            <div className="p-6 overflow-y-auto space-y-3 flex-1">
               {AVAILABLE_COUPONS.map((cp) => (
                 <div
                   key={cp.code}
@@ -272,6 +300,18 @@ const MainContent = () => {
                 </div>
               ))}
             </div>
+
+            {/* Bottom Close Button */}
+            <div className="p-3.5 bg-slate-50 border-t border-slate-100 text-center">
+              <button
+                type="button"
+                onClick={() => setIsOffersModalOpen(false)}
+                className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-2.5 rounded-xl transition-colors"
+              >
+                Close Offers
+              </button>
+            </div>
+
           </div>
         </div>
       )}
