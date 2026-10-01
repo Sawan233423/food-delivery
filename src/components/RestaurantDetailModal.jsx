@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { X, Star, Clock, MapPin, Tag, Plus, Minus } from 'lucide-react';
+import { onImageError } from '../utils/imageFallbacks';
 
 export const RestaurantDetailModal = ({ restaurant, onClose }) => {
   const { cart, addToCart, updateCartQty } = useApp();
@@ -23,6 +24,7 @@ export const RestaurantDetailModal = ({ restaurant, onClose }) => {
           <img
             src={restaurant.banner}
             alt={restaurant.name}
+            onError={(e) => onImageError(e, 'restaurant')}
             className="w-full h-full object-cover opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -137,6 +139,7 @@ export const RestaurantDetailModal = ({ restaurant, onClose }) => {
                     <img
                       src={dish.image}
                       alt={dish.name}
+                      onError={(e) => onImageError(e, 'food')}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />

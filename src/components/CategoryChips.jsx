@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { CATEGORIES } from '../data/mockData';
+import { onImageError } from '../utils/imageFallbacks';
 
 export const CategoryChips = () => {
   const { selectedCategory, setSelectedCategory } = useApp();
@@ -40,6 +41,7 @@ export const CategoryChips = () => {
                     <img
                       src={cat.img}
                       alt={cat.name}
+                      onError={(e) => onImageError(e, 'category')}
                       className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
                     />
                   ) : (

@@ -11,6 +11,7 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { InteractiveStreetDeliveryMap } from './InteractiveStreetDeliveryMap';
+import { onImageError } from '../utils/imageFallbacks';
 
 export const LiveOrderTracker = () => {
   const { activeOrder } = useApp();
@@ -183,6 +184,7 @@ export const LiveOrderTracker = () => {
                 <img
                   src={activeOrder.assignedRider.photo}
                   alt={activeOrder.assignedRider.name}
+                  onError={(e) => onImageError(e, 'rider')}
                   className="w-14 h-14 rounded-2xl object-cover border-2 border-orange-500/50 shadow-md"
                 />
                 <div className="flex-1 min-w-0">
@@ -264,6 +266,7 @@ export const LiveOrderTracker = () => {
             <img
               src={activeOrder.assignedRider.photo}
               alt={activeOrder.assignedRider.name}
+              onError={(e) => onImageError(e, 'rider')}
               className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-emerald-500 shadow-xl"
             />
             <h4 className="font-bold text-lg mt-3">{activeOrder.assignedRider.name}</h4>
@@ -291,6 +294,7 @@ export const LiveOrderTracker = () => {
                 <img
                   src={activeOrder.assignedRider.photo}
                   alt={activeOrder.assignedRider.name}
+                  onError={(e) => onImageError(e, 'rider')}
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>

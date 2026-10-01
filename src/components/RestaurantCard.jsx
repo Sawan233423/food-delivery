@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Star, Clock, MapPin, Tag, Heart } from 'lucide-react';
+import { onImageError } from '../utils/imageFallbacks';
 
 export const RestaurantCard = ({ restaurant, onSelect }) => {
   const { favorites, toggleFavorite } = useApp();
@@ -16,6 +17,7 @@ export const RestaurantCard = ({ restaurant, onSelect }) => {
         <img
           src={restaurant.banner}
           alt={restaurant.name}
+          onError={(e) => onImageError(e, 'restaurant')}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />

@@ -75,7 +75,7 @@ export const RESTAURANTS = [
         rating: 4.6,
         ratingCount: 310,
         description: 'Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.',
-        image: 'https://images.unsplash.com/photo-1605197154336-39a7b9736e9d?w=400&auto=format&fit=crop&q=80'
+        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
       }
     ]
   },
