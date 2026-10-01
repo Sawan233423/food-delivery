@@ -23,6 +23,15 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
   const [qrDetails, setQrDetails] = useState(null);
   const [copiedUpi, setCopiedUpi] = useState(false);
 
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && !isProcessing) onClose();
+    };
+    if (isOpen) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isProcessing, onClose]);
+
   const bill = calculateBill();
 
   // Fetch dynamic payment intent on open or amount change
@@ -75,27 +84,46 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-md animate-fade-in">
-      <div className="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100 animate-slide-up relative max-h-[92vh] overflow-y-auto">
+    <div 
+      onClick={(e) => {
+        if (e.target === e.currentTarget && !isProcessing) onClose();
+      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in"
+    >
+      <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-slate-200 animate-slide-up relative max-h-[88vh] overflow-hidden flex flex-col">
         
-        {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-          <div>
-            <h3 className="font-extrabold text-xl text-slate-900 font-display">
-              Payment & Checkout 💳
-            </h3>
-            <p className="text-xs text-slate-500 font-medium mt-0.5">
-              Instant 256-bit encrypted checkout
-            </p>
+        {/* Sticky Header with Back and Cancel Button */}
+        <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={onClose}
+              disabled={isProcessing}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-extrabold text-xs transition-colors"
+            >
+              <span>← Back</span>
+            </button>
+            <div>
+              <h3 className="font-extrabold text-lg text-slate-900 font-display leading-tight">
+                Payment & Checkout 💳
+              </h3>
+              <p className="text-[11px] text-slate-400 font-medium">
+                Instant 256-bit encrypted checkout
+              </p>
+            </div>
           </div>
           <button
+            type="button"
             onClick={onClose}
             disabled={isProcessing}
-            className="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center hover:bg-slate-200 transition-colors"
+            className="w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:text-red-600 hover:bg-red-50 flex items-center justify-center transition-colors border border-slate-200"
+            title="Cancel"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </button>
         </div>
+
+        <div className="overflow-y-auto px-6 py-4 flex-1 space-y-4">
 
         {/* Delivery Address Review */}
         <div className="mt-4 p-3.5 bg-slate-50 rounded-2xl border border-slate-200/70 flex items-start gap-3 text-xs">
@@ -310,6 +338,8 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
               </>
             )}
           </button>
+        </div>
+
         </div>
 
       </div>

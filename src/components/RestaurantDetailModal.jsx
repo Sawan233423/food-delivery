@@ -7,6 +7,15 @@ export const RestaurantDetailModal = ({ restaurant, onClose }) => {
   const { cart, addToCart, updateCartQty } = useApp();
   const [filterVegOnly, setFilterVegOnly] = useState(false);
 
+  // Close on Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose();
+    };
+    if (restaurant) window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [restaurant, onClose]);
+
   if (!restaurant) return null;
 
   // Filter items
@@ -16,8 +25,13 @@ export const RestaurantDetailModal = ({ restaurant, onClose }) => {
   });
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/70 backdrop-blur-md animate-fade-in overflow-y-auto">
-      <div className="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-slate-100 animate-slide-up max-h-[92vh] flex flex-col my-auto">
+    <div 
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/80 backdrop-blur-md animate-fade-in overflow-y-auto"
+    >
+      <div className="bg-white w-full max-w-3xl rounded-3xl overflow-hidden shadow-2xl border border-slate-200 animate-slide-up max-h-[90vh] flex flex-col my-auto">
         
         {/* Modal Header Banner */}
         <div className="relative h-56 w-full flex-shrink-0 bg-slate-900">
@@ -29,13 +43,24 @@ export const RestaurantDetailModal = ({ restaurant, onClose }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-black transition-all"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          {/* Close & Back button */}
+          <div className="absolute top-4 right-4 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/90 backdrop-blur-md text-white font-extrabold text-xs flex items-center gap-1 transition-all border border-white/20"
+            >
+              <span>← Back</span>
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="w-9 h-9 rounded-full bg-black/60 hover:bg-red-600/90 backdrop-blur-md text-white flex items-center justify-center hover:bg-black transition-all border border-white/20"
+              title="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
 
           {/* Restaurant details over banner */}
           <div className="absolute bottom-4 left-6 right-6 text-white">

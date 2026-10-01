@@ -34,6 +34,18 @@ export const Navbar = ({ onOpenOffers }) => {
   const [isAddressModalOpen, setIsAddressModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
+  // Close modals on Escape key
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsAddressModalOpen(false);
+        setIsAuthModalOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
   const sampleAddresses = [
@@ -185,7 +197,10 @@ export const Navbar = ({ onOpenOffers }) => {
 
       {/* Address Switcher Modal */}
       {isAddressModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+        <div 
+          onClick={(e) => { if (e.target === e.currentTarget) setIsAddressModalOpen(false); }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in"
+        >
           <div className="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl border border-slate-100 animate-slide-up">
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
               <div className="flex items-center gap-2">
@@ -230,7 +245,10 @@ export const Navbar = ({ onOpenOffers }) => {
 
       {/* User Profile & Past Orders Modal */}
       {isAuthModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+        <div 
+          onClick={(e) => { if (e.target === e.currentTarget) setIsAuthModalOpen(false); }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in"
+        >
           <div className="bg-white w-full max-w-md rounded-3xl p-6 shadow-2xl border border-slate-100 animate-slide-up flex flex-col max-h-[85vh]">
             
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
