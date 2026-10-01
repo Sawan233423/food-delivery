@@ -5,8 +5,8 @@ export const CATEGORIES = [
   { id: 'burger', name: 'Burgers', icon: '🍔', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&auto=format&fit=crop&q=80' },
   { id: 'chinese', name: 'Asian & Bowls', icon: '🍜', img: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=300&auto=format&fit=crop&q=80' },
   { id: 'healthy', name: 'Healthy & Salads', icon: '🥗', img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300&auto=format&fit=crop&q=80' },
-  { id: 'dessert', name: 'Desserts & Cakes', icon: '🍰', img: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300&auto=format&fit=crop&q=80' },
-  { id: 'rolls', name: 'Rolls & Wraps', icon: '🌯', img: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=300&auto=format&fit=crop&q=80' },
+  { id: 'dessert', name: 'Desserts & Cakes', icon: '🍰', img: '/images/chocolate_cake_dessert.jpg' },
+  { id: 'rolls', name: 'Rolls & Wraps', icon: '🌯', img: '/images/chicken_kathi_roll.jpg' },
   { id: 'beverages', name: 'Shakes & Coffee', icon: '🥤', img: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=300&auto=format&fit=crop&q=80' }
 ];
 
@@ -63,7 +63,7 @@ export const RESTAURANTS = [
         rating: 4.5,
         ratingCount: 420,
         description: 'Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.',
-        image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=400&auto=format&fit=crop&q=80'
+        image: '/images/galouti_kebab.jpg'
       },
       {
         id: 'ds-4',
@@ -75,7 +75,7 @@ export const RESTAURANTS = [
         rating: 4.6,
         ratingCount: 310,
         description: 'Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.',
-        image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&auto=format&fit=crop&q=80'
+        image: '/images/shahi_tukda.jpg'
       }
     ]
   },
@@ -131,7 +131,7 @@ export const RESTAURANTS = [
         rating: 4.6,
         ratingCount: 520,
         description: 'Pull-apart brioche breadsticks glazed with black truffle butter, aged parmesan, and roasted garlic aioli dip.',
-        image: 'https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?w=400&auto=format&fit=crop&q=80'
+        image: '/images/garlic_breadsticks.jpg'
       },
       {
         id: 'ac-4',
@@ -243,7 +243,7 @@ export const RESTAURANTS = [
         rating: 4.7,
         ratingCount: 1340,
         description: 'Wok-tossed noodles with bell peppers, spring onions, paired with wok-glazed crispy cottage cheese in spicy garlic sauce.',
-        image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&auto=format&fit=crop&q=80'
+        image: '/images/veg_hakka_noodles.jpg'
       },
       {
         id: 'wr-2',
@@ -267,7 +267,7 @@ export const RESTAURANTS = [
         rating: 4.4,
         ratingCount: 450,
         description: 'Golden fried paper-thin rolls packed with glass noodles, cabbage, and carrots with sweet Thai chilli dip.',
-        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&auto=format&fit=crop&q=80'
+        image: '/images/crispy_spring_rolls.jpg'
       }
     ]
   },
@@ -311,7 +311,7 @@ export const RESTAURANTS = [
         rating: 4.7,
         ratingCount: 490,
         description: 'Organic acai blended with almond milk, topped with chia seeds, fresh blueberries, banana slices, and toasted coconut flakes.',
-        image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400&auto=format&fit=crop&q=80'
+        image: '/images/acai_bowl.jpg'
       }
     ]
   },
@@ -343,7 +343,7 @@ export const RESTAURANTS = [
         rating: 4.8,
         ratingCount: 2300,
         description: 'Flaky layered paratha lined with double egg, packed with spiced shredded chicken tikka, sliced onions, and spicy green relish.',
-        image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=400&auto=format&fit=crop&q=80'
+        image: '/images/chicken_kathi_roll.jpg'
       },
       {
         id: 'kj-2',
@@ -355,7 +355,7 @@ export const RESTAURANTS = [
         rating: 4.6,
         ratingCount: 1450,
         description: 'Char-grilled cottage cheese cubes smothered in rich makhani gravy and melted mozzarella, rolled in whole wheat tortilla.',
-        image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&auto=format&fit=crop&q=80'
+        image: '/images/paneer_tikka_roll.jpg'
       }
     ]
   }
@@ -374,7 +374,7 @@ export const RIDERS_POOL = [
     distanceToRestoKm: 0.8,
     etaToRestoMin: 4,
     status: 'AVAILABLE', // AVAILABLE | BUSY | OFFLINE
-    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
+    photo: '/images/rider_rahul.jpg',
     acceptanceRate: '98%',
     matchingScore: 94.5
   },
