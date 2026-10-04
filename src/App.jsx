@@ -151,7 +151,31 @@ const MainContent = () => {
             ) : (
               /* Consumer Hero Banner (When all cravings) */
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 rounded-3xl p-6 sm:p-10 text-white shadow-xl shadow-orange-500/15 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                {/* Mobile App Promo Card (md:hidden) */}
+                <div className="md:hidden bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 rounded-2xl p-4 text-white shadow-md shadow-orange-500/15 relative overflow-hidden flex items-center justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="inline-flex items-center gap-1 bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide">
+                      <Sparkles className="w-3 h-3 text-amber-200" />
+                      <span>Flat 60% OFF</span>
+                    </div>
+                    <h3 className="text-sm font-black font-display tracking-tight mt-1 text-white leading-tight truncate">
+                      Hot meals delivered in minutes
+                    </h3>
+                    <p className="text-[11px] text-white/90 font-medium mt-0.5">
+                      Use code <span className="font-mono bg-white text-orange-600 px-1.5 py-0.5 rounded font-black">STEAL60</span>
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setIsOffersModalOpen(true)}
+                    className="bg-white text-orange-600 font-extrabold text-xs px-3 py-2 rounded-xl shadow-sm flex items-center gap-1 flex-shrink-0 transition-transform active:scale-95"
+                  >
+                    <span>Offers</span>
+                    <Percent className="w-3 h-3" />
+                  </button>
+                </div>
+
+                {/* Desktop Glorious Hero Banner (hidden md:flex) */}
+                <div className="hidden md:flex bg-gradient-to-r from-orange-600 via-amber-500 to-orange-500 rounded-3xl p-8 lg:p-10 text-white shadow-xl shadow-orange-500/15 relative overflow-hidden items-center justify-between gap-6">
                   <div className="relative z-10 max-w-xl">
                     <span className="text-xs uppercase font-extrabold tracking-widest bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-full text-white inline-flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-amber-200" />
@@ -165,10 +189,10 @@ const MainContent = () => {
                     </p>
                   </div>
 
-                  <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3">
+                  <div className="relative z-10 flex items-center gap-3">
                     <button
                       onClick={() => setIsOffersModalOpen(true)}
-                      className="bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-2xl shadow-lg flex items-center gap-2 transition-all hover:scale-105"
+                      className="bg-white hover:bg-orange-50 text-orange-600 font-extrabold text-sm px-6 py-3.5 rounded-2xl shadow-lg flex items-center gap-2 transition-all hover:scale-105"
                     >
                       <Percent className="w-4 h-4" />
                       <span>View Today's Offers</span>
@@ -181,37 +205,37 @@ const MainContent = () => {
             )}
 
             {/* Restaurants Directory Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 sm:pt-4">
               
               {/* Filter & Sorting Controls */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-slate-200">
                 <div>
-                  <h2 className="text-2xl font-black text-slate-900 font-display tracking-tight">
+                  <h2 className="text-lg sm:text-2xl font-black text-slate-900 font-display tracking-tight">
                     {selectedCategory !== 'all'
                       ? `Restaurants Serving ${CATEGORIES.find(c => c.id === selectedCategory)?.name || 'This Dish'}`
                       : 'Top Restaurants Near You'}
                   </h2>
-                  <p className="text-xs text-slate-500 font-semibold mt-0.5">
-                    Showing {filteredRestaurants.length} curated food spots with fast live delivery
+                  <p className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-0.5">
+                    {filteredRestaurants.length} curated food spots with fast live delivery
                   </p>
                 </div>
 
-                {/* Sort Chips */}
-                <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-                  <span className="text-xs font-bold text-slate-400 flex items-center gap-1">
+                {/* Sort Chips - Horizontal Scrollable Row */}
+                <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+                  <span className="hidden sm:flex text-xs font-bold text-slate-400 items-center gap-1">
                     <SlidersHorizontal className="w-3.5 h-3.5" />
                     <span>Sort:</span>
                   </span>
                   {[
                     { id: 'relevance', label: 'Relevance' },
-                    { id: 'rating', label: 'Rating 4.0+' },
-                    { id: 'deliveryTime', label: 'Fastest Delivery' },
-                    { id: 'cost', label: 'Price: Low to High' }
+                    { id: 'rating', label: '⭐ Rating 4.0+' },
+                    { id: 'deliveryTime', label: '⚡ Fastest' },
+                    { id: 'cost', label: '₹ Low to High' }
                   ].map(s => (
                     <button
                       key={s.id}
                       onClick={() => setSortBy(s.id)}
-                      className={`text-xs font-bold px-3.5 py-1.5 rounded-full border transition-all whitespace-nowrap ${
+                      className={`text-xs font-bold px-3 py-1.5 rounded-full border transition-all whitespace-nowrap flex-shrink-0 ${
                         sortBy === s.id
                           ? 'bg-slate-900 text-white border-slate-900 shadow-sm'
                           : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'
