@@ -25,6 +25,8 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { AVAILABLE_COUPONS, CATEGORIES } from './data/mockData';
+import { MobileBottomNav } from './components/MobileBottomNav';
+import { MobileStickyCartStrip } from './components/MobileStickyCartStrip';
 
 const MainContent = () => {
   const { 
@@ -488,8 +490,23 @@ const MainContent = () => {
         </div>
       )}
 
+      {/* Mobile Sticky Floating Cart Strip (Swiggy / Zomato style) */}
+      <MobileStickyCartStrip />
+
+
+      {/* Mobile Bottom App Navigation Bar (Swiggy / Zomato style) */}
+      <MobileBottomNav
+        onOpenOffers={() => setIsOffersModalOpen(true)}
+        onFocusSearch={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          const inputs = document.querySelectorAll('input[type="text"]');
+          if (inputs.length > 0) inputs[0].focus();
+        }}
+      />
+
     </div>
   );
+
 };
 
 export default function App() {

@@ -1181,6 +1181,1004 @@
   ],
   "orders": [
     {
+      "id": "ORD-8373",
+      "userId": "user-01",
+      "restaurant": {
+        "id": "resto-1",
+        "name": "Dum Safar Biryani House",
+        "cuisine": [
+          "Hyderabadi",
+          "Mughlai",
+          "Kebabs",
+          "Biryani"
+        ],
+        "rating": 4.6,
+        "reviewsCount": "3.4k+",
+        "deliveryTimeMin": 28,
+        "distanceKm": 2.1,
+        "costForTwo": 450,
+        "offer": "60% OFF up to ₹120",
+        "couponCode": "STEAL60",
+        "pureVeg": false,
+        "promoted": true,
+        "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+        "address": "Plot 42, Sector 18, Central Food District",
+        "coords": {
+          "x": 220,
+          "y": 140
+        },
+        "gps": {
+          "lat": 28.57,
+          "lng": 77.32
+        },
+        "menu": [
+          {
+            "id": "ds-1",
+            "name": "Royal Dum Hyderabadi Chicken Biryani",
+            "category": "biryani",
+            "price": 349,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.8,
+            "ratingCount": 1420,
+            "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+            "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-2",
+            "name": "Nawabi Paneer Dum Biryani",
+            "category": "biryani",
+            "price": 299,
+            "isVeg": true,
+            "isBestseller": true,
+            "rating": 4.7,
+            "ratingCount": 890,
+            "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint leaves.",
+            "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-3",
+            "name": "Awadhi Dum Mutton Biryani (Special)",
+            "category": "biryani",
+            "price": 449,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.9,
+            "ratingCount": 1650,
+            "description": "Prime cuts of tender mutton slow-braised in aromatic whole spices, layered with royal saffron rice and drizzled with desi ghee.",
+            "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-4",
+            "name": "Lucknowi Murgh Dum Biryani",
+            "category": "biryani",
+            "price": 369,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 680,
+            "description": "Subtle and aromatic white-gravy style royal biryani cooked with bone-in chicken thighs, rose water, and kewra essence.",
+            "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-5",
+            "name": "Kolkata Special Egg Biryani (2 Eggs)",
+            "category": "biryani",
+            "price": 259,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 520,
+            "description": "Classic Kolkata style biryani with golden pan-fried eggs, spiced large potato chunk, and mildly sweet cardamom infused rice.",
+            "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-6",
+            "name": "Saffron Subz Handi Biryani",
+            "category": "biryani",
+            "price": 279,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 410,
+            "description": "Fresh farm carrots, beans, florets, and green peas layered with kewra saffron basmati and golden fried shallots.",
+            "image": "https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-7",
+            "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+            "category": "starters",
+            "price": 289,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 420,
+            "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+            "image": "/images/galouti_kebab.jpg"
+          },
+          {
+            "id": "ds-8",
+            "name": "Shahi Tukda with Rabri",
+            "category": "dessert",
+            "price": 149,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 310,
+            "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+            "image": "/images/shahi_tukda.jpg"
+          },
+          {
+            "id": "ds-9",
+            "name": "Chilled Masala Chaas Cooler",
+            "category": "beverages",
+            "price": 79,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.7,
+            "ratingCount": 290,
+            "description": "Traditional buttermilk blended with roasted cumin, mint, green chillies, and rock salt for perfect digestion.",
+            "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "category": "biryani",
+          "price": 349,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 1420,
+          "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+          "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80",
+          "restaurant": {
+            "id": "resto-1",
+            "name": "Dum Safar Biryani House",
+            "rating": 4.6,
+            "deliveryTimeMin": 28,
+            "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+            "fullResto": {
+              "id": "resto-1",
+              "name": "Dum Safar Biryani House",
+              "cuisine": [
+                "Hyderabadi",
+                "Mughlai",
+                "Kebabs",
+                "Biryani"
+              ],
+              "rating": 4.6,
+              "reviewsCount": "3.4k+",
+              "deliveryTimeMin": 28,
+              "distanceKm": 2.1,
+              "costForTwo": 450,
+              "offer": "60% OFF up to ₹120",
+              "couponCode": "STEAL60",
+              "pureVeg": false,
+              "promoted": true,
+              "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+              "address": "Plot 42, Sector 18, Central Food District",
+              "coords": {
+                "x": 220,
+                "y": 140
+              },
+              "gps": {
+                "lat": 28.57,
+                "lng": 77.32
+              },
+              "menu": [
+                {
+                  "id": "ds-1",
+                  "name": "Royal Dum Hyderabadi Chicken Biryani",
+                  "category": "biryani",
+                  "price": 349,
+                  "isVeg": false,
+                  "isBestseller": true,
+                  "rating": 4.8,
+                  "ratingCount": 1420,
+                  "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+                  "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-2",
+                  "name": "Nawabi Paneer Dum Biryani",
+                  "category": "biryani",
+                  "price": 299,
+                  "isVeg": true,
+                  "isBestseller": true,
+                  "rating": 4.7,
+                  "ratingCount": 890,
+                  "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint leaves.",
+                  "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-3",
+                  "name": "Awadhi Dum Mutton Biryani (Special)",
+                  "category": "biryani",
+                  "price": 449,
+                  "isVeg": false,
+                  "isBestseller": true,
+                  "rating": 4.9,
+                  "ratingCount": 1650,
+                  "description": "Prime cuts of tender mutton slow-braised in aromatic whole spices, layered with royal saffron rice and drizzled with desi ghee.",
+                  "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-4",
+                  "name": "Lucknowi Murgh Dum Biryani",
+                  "category": "biryani",
+                  "price": 369,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 680,
+                  "description": "Subtle and aromatic white-gravy style royal biryani cooked with bone-in chicken thighs, rose water, and kewra essence.",
+                  "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-5",
+                  "name": "Kolkata Special Egg Biryani (2 Eggs)",
+                  "category": "biryani",
+                  "price": 259,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.5,
+                  "ratingCount": 520,
+                  "description": "Classic Kolkata style biryani with golden pan-fried eggs, spiced large potato chunk, and mildly sweet cardamom infused rice.",
+                  "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-6",
+                  "name": "Saffron Subz Handi Biryani",
+                  "category": "biryani",
+                  "price": 279,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 410,
+                  "description": "Fresh farm carrots, beans, florets, and green peas layered with kewra saffron basmati and golden fried shallots.",
+                  "image": "https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-7",
+                  "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+                  "category": "starters",
+                  "price": 289,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.5,
+                  "ratingCount": 420,
+                  "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+                  "image": "/images/galouti_kebab.jpg"
+                },
+                {
+                  "id": "ds-8",
+                  "name": "Shahi Tukda with Rabri",
+                  "category": "dessert",
+                  "price": 149,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 310,
+                  "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+                  "image": "/images/shahi_tukda.jpg"
+                },
+                {
+                  "id": "ds-9",
+                  "name": "Chilled Masala Chaas Cooler",
+                  "category": "beverages",
+                  "price": 79,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.7,
+                  "ratingCount": 290,
+                  "description": "Traditional buttermilk blended with roasted cumin, mint, green chillies, and rock salt for perfect digestion.",
+                  "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80"
+                }
+              ]
+            }
+          },
+          "restaurantId": "resto-1",
+          "restaurantName": "Dum Safar Biryani House",
+          "restaurantCoords": {
+            "x": 220,
+            "y": 140
+          },
+          "qty": 1
+        }
+      ],
+      "bill": {
+        "itemTotal": 349,
+        "deliveryFee": 35,
+        "platformFee": 7,
+        "taxes": 17,
+        "discount": 120,
+        "tip": 20,
+        "totalToPay": 308
+      },
+      "paymentMethod": "COD",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Tower 4, PSI I (P8), Greater Noida, Gautam Buddha Nagar, Uttar Pradesh, Near Near City Park Metro",
+        "flatNo": "Flat 402, Tower 4",
+        "area": "PSI I (P8), Greater Noida, Gautam Buddha Nagar, Uttar Pradesh",
+        "landmark": "Near City Park Metro",
+        "lat": 28.452893261054882,
+        "lng": 77.50817902505435,
+        "coords": {
+          "x": 440,
+          "y": 390
+        }
+      },
+      "specialInstructions": "",
+      "status": "CONFIRMED",
+      "assignedRider": {
+        "id": "rider-01",
+        "name": "Rahul Sharma",
+        "phone": "+91 98765 43210",
+        "rating": 4.9,
+        "completedOrders": 1420,
+        "vehicle": "Hero Splendor (DL 04 EF 7821)",
+        "currentCoords": {
+          "x": 250,
+          "y": 180
+        },
+        "distanceToRestoKm": 0.8,
+        "etaToRestoMin": 4,
+        "status": "AVAILABLE",
+        "photo": "/images/rider_rahul.jpg",
+        "acceptanceRate": "98%",
+        "matchingScore": 94.5
+      },
+      "deliveryPin": "1189",
+      "etaMin": 24,
+      "createdAt": "2026-10-04T10:40:35.870Z",
+      "timeline": [
+        {
+          "step": "Order Placed",
+          "time": "Just now",
+          "done": true
+        },
+        {
+          "step": "Kitchen Preparing",
+          "time": "In 5 mins",
+          "done": false
+        },
+        {
+          "step": "Rider Picked Up",
+          "time": "In 12 mins",
+          "done": false
+        },
+        {
+          "step": "Out for Delivery",
+          "time": "In 18 mins",
+          "done": false
+        },
+        {
+          "step": "Delivered",
+          "time": "In 24 mins",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "ORD-3301",
+      "userId": "user-01",
+      "restaurant": {
+        "id": "resto-1",
+        "name": "Dum Safar Biryani House",
+        "cuisine": [
+          "Hyderabadi",
+          "Mughlai",
+          "Kebabs",
+          "Biryani"
+        ],
+        "rating": 4.6,
+        "reviewsCount": "3.4k+",
+        "deliveryTimeMin": 28,
+        "distanceKm": 2.1,
+        "costForTwo": 450,
+        "offer": "60% OFF up to ₹120",
+        "couponCode": "STEAL60",
+        "pureVeg": false,
+        "promoted": true,
+        "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+        "address": "Plot 42, Sector 18, Central Food District",
+        "coords": {
+          "x": 220,
+          "y": 140
+        },
+        "gps": {
+          "lat": 28.57,
+          "lng": 77.32
+        },
+        "menu": [
+          {
+            "id": "ds-1",
+            "name": "Royal Dum Hyderabadi Chicken Biryani",
+            "category": "biryani",
+            "price": 349,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.8,
+            "ratingCount": 1420,
+            "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+            "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-2",
+            "name": "Nawabi Paneer Dum Biryani",
+            "category": "biryani",
+            "price": 299,
+            "isVeg": true,
+            "isBestseller": true,
+            "rating": 4.7,
+            "ratingCount": 890,
+            "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint leaves.",
+            "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-3",
+            "name": "Awadhi Dum Mutton Biryani (Special)",
+            "category": "biryani",
+            "price": 449,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.9,
+            "ratingCount": 1650,
+            "description": "Prime cuts of tender mutton slow-braised in aromatic whole spices, layered with royal saffron rice and drizzled with desi ghee.",
+            "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-4",
+            "name": "Lucknowi Murgh Dum Biryani",
+            "category": "biryani",
+            "price": 369,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 680,
+            "description": "Subtle and aromatic white-gravy style royal biryani cooked with bone-in chicken thighs, rose water, and kewra essence.",
+            "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-5",
+            "name": "Kolkata Special Egg Biryani (2 Eggs)",
+            "category": "biryani",
+            "price": 259,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 520,
+            "description": "Classic Kolkata style biryani with golden pan-fried eggs, spiced large potato chunk, and mildly sweet cardamom infused rice.",
+            "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-6",
+            "name": "Saffron Subz Handi Biryani",
+            "category": "biryani",
+            "price": 279,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 410,
+            "description": "Fresh farm carrots, beans, florets, and green peas layered with kewra saffron basmati and golden fried shallots.",
+            "image": "https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-7",
+            "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+            "category": "starters",
+            "price": 289,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 420,
+            "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+            "image": "/images/galouti_kebab.jpg"
+          },
+          {
+            "id": "ds-8",
+            "name": "Shahi Tukda with Rabri",
+            "category": "dessert",
+            "price": 149,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 310,
+            "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+            "image": "/images/shahi_tukda.jpg"
+          },
+          {
+            "id": "ds-9",
+            "name": "Chilled Masala Chaas Cooler",
+            "category": "beverages",
+            "price": 79,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.7,
+            "ratingCount": 290,
+            "description": "Traditional buttermilk blended with roasted cumin, mint, green chillies, and rock salt for perfect digestion.",
+            "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "category": "biryani",
+          "price": 349,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 1420,
+          "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+          "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80",
+          "restaurantId": "resto-1",
+          "restaurantName": "Dum Safar Biryani House",
+          "restaurantCoords": {
+            "x": 220,
+            "y": 140
+          },
+          "qty": 1
+        }
+      ],
+      "bill": {
+        "itemTotal": 349,
+        "deliveryFee": 35,
+        "platformFee": 7,
+        "taxes": 17,
+        "discount": 0,
+        "tip": 20,
+        "totalToPay": 428
+      },
+      "paymentMethod": "UPI",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Lotus Greens, Central Boulevard",
+        "coords": {
+          "x": 440,
+          "y": 390
+        }
+      },
+      "specialInstructions": "",
+      "status": "CONFIRMED",
+      "assignedRider": {
+        "id": "rider-01",
+        "name": "Rahul Sharma",
+        "phone": "+91 98765 43210",
+        "rating": 4.9,
+        "completedOrders": 1420,
+        "vehicle": "Hero Splendor (DL 04 EF 7821)",
+        "currentCoords": {
+          "x": 250,
+          "y": 180
+        },
+        "distanceToRestoKm": 0.8,
+        "etaToRestoMin": 4,
+        "status": "AVAILABLE",
+        "photo": "/images/rider_rahul.jpg",
+        "acceptanceRate": "98%",
+        "matchingScore": 94.5
+      },
+      "deliveryPin": "1008",
+      "etaMin": 24,
+      "createdAt": "2026-10-04T10:33:31.644Z",
+      "timeline": [
+        {
+          "step": "Order Placed",
+          "time": "Just now",
+          "done": true
+        },
+        {
+          "step": "Kitchen Preparing",
+          "time": "In 5 mins",
+          "done": false
+        },
+        {
+          "step": "Rider Picked Up",
+          "time": "In 12 mins",
+          "done": false
+        },
+        {
+          "step": "Out for Delivery",
+          "time": "In 18 mins",
+          "done": false
+        },
+        {
+          "step": "Delivered",
+          "time": "In 24 mins",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "ORD-1061",
+      "userId": "user-01",
+      "restaurant": {
+        "id": "resto-1",
+        "name": "Dum Safar Biryani House",
+        "cuisine": [
+          "Hyderabadi",
+          "Mughlai",
+          "Kebabs",
+          "Biryani"
+        ],
+        "rating": 4.6,
+        "reviewsCount": "3.4k+",
+        "deliveryTimeMin": 28,
+        "distanceKm": 2.1,
+        "costForTwo": 450,
+        "offer": "60% OFF up to ₹120",
+        "couponCode": "STEAL60",
+        "pureVeg": false,
+        "promoted": true,
+        "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+        "address": "Plot 42, Sector 18, Central Food District",
+        "coords": {
+          "x": 220,
+          "y": 140
+        },
+        "gps": {
+          "lat": 28.57,
+          "lng": 77.32
+        },
+        "menu": [
+          {
+            "id": "ds-1",
+            "name": "Royal Dum Hyderabadi Chicken Biryani",
+            "category": "biryani",
+            "price": 349,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.8,
+            "ratingCount": 1420,
+            "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+            "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-2",
+            "name": "Nawabi Paneer Dum Biryani",
+            "category": "biryani",
+            "price": 299,
+            "isVeg": true,
+            "isBestseller": true,
+            "rating": 4.7,
+            "ratingCount": 890,
+            "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint leaves.",
+            "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-3",
+            "name": "Awadhi Dum Mutton Biryani (Special)",
+            "category": "biryani",
+            "price": 449,
+            "isVeg": false,
+            "isBestseller": true,
+            "rating": 4.9,
+            "ratingCount": 1650,
+            "description": "Prime cuts of tender mutton slow-braised in aromatic whole spices, layered with royal saffron rice and drizzled with desi ghee.",
+            "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-4",
+            "name": "Lucknowi Murgh Dum Biryani",
+            "category": "biryani",
+            "price": 369,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 680,
+            "description": "Subtle and aromatic white-gravy style royal biryani cooked with bone-in chicken thighs, rose water, and kewra essence.",
+            "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-5",
+            "name": "Kolkata Special Egg Biryani (2 Eggs)",
+            "category": "biryani",
+            "price": 259,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 520,
+            "description": "Classic Kolkata style biryani with golden pan-fried eggs, spiced large potato chunk, and mildly sweet cardamom infused rice.",
+            "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-6",
+            "name": "Saffron Subz Handi Biryani",
+            "category": "biryani",
+            "price": 279,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 410,
+            "description": "Fresh farm carrots, beans, florets, and green peas layered with kewra saffron basmati and golden fried shallots.",
+            "image": "https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400&auto=format&fit=crop&q=80"
+          },
+          {
+            "id": "ds-7",
+            "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+            "category": "starters",
+            "price": 289,
+            "isVeg": false,
+            "isBestseller": false,
+            "rating": 4.5,
+            "ratingCount": 420,
+            "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+            "image": "/images/galouti_kebab.jpg"
+          },
+          {
+            "id": "ds-8",
+            "name": "Shahi Tukda with Rabri",
+            "category": "dessert",
+            "price": 149,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.6,
+            "ratingCount": 310,
+            "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+            "image": "/images/shahi_tukda.jpg"
+          },
+          {
+            "id": "ds-9",
+            "name": "Chilled Masala Chaas Cooler",
+            "category": "beverages",
+            "price": 79,
+            "isVeg": true,
+            "isBestseller": false,
+            "rating": 4.7,
+            "ratingCount": 290,
+            "description": "Traditional buttermilk blended with roasted cumin, mint, green chillies, and rock salt for perfect digestion.",
+            "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "ds-1",
+          "name": "Royal Dum Hyderabadi Chicken Biryani",
+          "category": "biryani",
+          "price": 349,
+          "isVeg": false,
+          "isBestseller": true,
+          "rating": 4.8,
+          "ratingCount": 1420,
+          "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+          "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80",
+          "restaurant": {
+            "id": "resto-1",
+            "name": "Dum Safar Biryani House",
+            "rating": 4.6,
+            "deliveryTimeMin": 28,
+            "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+            "fullResto": {
+              "id": "resto-1",
+              "name": "Dum Safar Biryani House",
+              "cuisine": [
+                "Hyderabadi",
+                "Mughlai",
+                "Kebabs",
+                "Biryani"
+              ],
+              "rating": 4.6,
+              "reviewsCount": "3.4k+",
+              "deliveryTimeMin": 28,
+              "distanceKm": 2.1,
+              "costForTwo": 450,
+              "offer": "60% OFF up to ₹120",
+              "couponCode": "STEAL60",
+              "pureVeg": false,
+              "promoted": true,
+              "banner": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+              "address": "Plot 42, Sector 18, Central Food District",
+              "coords": {
+                "x": 220,
+                "y": 140
+              },
+              "gps": {
+                "lat": 28.57,
+                "lng": 77.32
+              },
+              "menu": [
+                {
+                  "id": "ds-1",
+                  "name": "Royal Dum Hyderabadi Chicken Biryani",
+                  "category": "biryani",
+                  "price": 349,
+                  "isVeg": false,
+                  "isBestseller": true,
+                  "rating": 4.8,
+                  "ratingCount": 1420,
+                  "description": "Authentic long-grain basmati cooked with tender chicken marinated in 21 secret spices and slow-cooked in sealed clay handi with saffron.",
+                  "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-2",
+                  "name": "Nawabi Paneer Dum Biryani",
+                  "category": "biryani",
+                  "price": 299,
+                  "isVeg": true,
+                  "isBestseller": true,
+                  "rating": 4.7,
+                  "ratingCount": 890,
+                  "description": "Fragrant saffron basmati rice layered with melt-in-mouth cottage cheese chunks, caramelized onions, and fresh mint leaves.",
+                  "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-3",
+                  "name": "Awadhi Dum Mutton Biryani (Special)",
+                  "category": "biryani",
+                  "price": 449,
+                  "isVeg": false,
+                  "isBestseller": true,
+                  "rating": 4.9,
+                  "ratingCount": 1650,
+                  "description": "Prime cuts of tender mutton slow-braised in aromatic whole spices, layered with royal saffron rice and drizzled with desi ghee.",
+                  "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-4",
+                  "name": "Lucknowi Murgh Dum Biryani",
+                  "category": "biryani",
+                  "price": 369,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 680,
+                  "description": "Subtle and aromatic white-gravy style royal biryani cooked with bone-in chicken thighs, rose water, and kewra essence.",
+                  "image": "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-5",
+                  "name": "Kolkata Special Egg Biryani (2 Eggs)",
+                  "category": "biryani",
+                  "price": 259,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.5,
+                  "ratingCount": 520,
+                  "description": "Classic Kolkata style biryani with golden pan-fried eggs, spiced large potato chunk, and mildly sweet cardamom infused rice.",
+                  "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-6",
+                  "name": "Saffron Subz Handi Biryani",
+                  "category": "biryani",
+                  "price": 279,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 410,
+                  "description": "Fresh farm carrots, beans, florets, and green peas layered with kewra saffron basmati and golden fried shallots.",
+                  "image": "https://images.unsplash.com/photo-1642821373181-696a54913e93?w=400&auto=format&fit=crop&q=80"
+                },
+                {
+                  "id": "ds-7",
+                  "name": "Galouti Kebab with Roomali Roti (4 pcs)",
+                  "category": "starters",
+                  "price": 289,
+                  "isVeg": false,
+                  "isBestseller": false,
+                  "rating": 4.5,
+                  "ratingCount": 420,
+                  "description": "Silky, aromatic Lucknowi minced meat patties pan-seared in pure ghee, served with mint chutney and pickled onions.",
+                  "image": "/images/galouti_kebab.jpg"
+                },
+                {
+                  "id": "ds-8",
+                  "name": "Shahi Tukda with Rabri",
+                  "category": "dessert",
+                  "price": 149,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.6,
+                  "ratingCount": 310,
+                  "description": "Crisp golden brioche soaked in cardamom syrup and blanketed with thickened saffron rabri and sliced pistachios.",
+                  "image": "/images/shahi_tukda.jpg"
+                },
+                {
+                  "id": "ds-9",
+                  "name": "Chilled Masala Chaas Cooler",
+                  "category": "beverages",
+                  "price": 79,
+                  "isVeg": true,
+                  "isBestseller": false,
+                  "rating": 4.7,
+                  "ratingCount": 290,
+                  "description": "Traditional buttermilk blended with roasted cumin, mint, green chillies, and rock salt for perfect digestion.",
+                  "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&auto=format&fit=crop&q=80"
+                }
+              ]
+            }
+          },
+          "restaurantId": "resto-1",
+          "restaurantName": "Dum Safar Biryani House",
+          "restaurantCoords": {
+            "x": 220,
+            "y": 140
+          },
+          "qty": 2
+        }
+      ],
+      "bill": {
+        "itemTotal": 698,
+        "deliveryFee": 35,
+        "platformFee": 7,
+        "taxes": 35,
+        "discount": 120,
+        "tip": 20,
+        "totalToPay": 675
+      },
+      "paymentMethod": "COD",
+      "deliveryAddress": {
+        "tag": "Home",
+        "text": "Flat 402, Tower 4, PSI I (P8), Greater Noida, Gautam Buddha Nagar, Uttar Pradesh, Near Near City Park Metro",
+        "flatNo": "Flat 402, Tower 4",
+        "area": "PSI I (P8), Greater Noida, Gautam Buddha Nagar, Uttar Pradesh",
+        "landmark": "Near City Park Metro",
+        "lat": 28.452513343426034,
+        "lng": 77.50804664310243,
+        "coords": {
+          "x": 440,
+          "y": 390
+        }
+      },
+      "specialInstructions": "",
+      "status": "CONFIRMED",
+      "assignedRider": {
+        "id": "rider-01",
+        "name": "Rahul Sharma",
+        "phone": "+91 98765 43210",
+        "rating": 4.9,
+        "completedOrders": 1420,
+        "vehicle": "Hero Splendor (DL 04 EF 7821)",
+        "currentCoords": {
+          "x": 250,
+          "y": 180
+        },
+        "distanceToRestoKm": 0.8,
+        "etaToRestoMin": 4,
+        "status": "AVAILABLE",
+        "photo": "/images/rider_rahul.jpg",
+        "acceptanceRate": "98%",
+        "matchingScore": 94.5
+      },
+      "deliveryPin": "1344",
+      "etaMin": 24,
+      "createdAt": "2026-10-04T10:02:48.317Z",
+      "timeline": [
+        {
+          "step": "Order Placed",
+          "time": "Just now",
+          "done": true
+        },
+        {
+          "step": "Kitchen Preparing",
+          "time": "In 5 mins",
+          "done": false
+        },
+        {
+          "step": "Rider Picked Up",
+          "time": "In 12 mins",
+          "done": false
+        },
+        {
+          "step": "Out for Delivery",
+          "time": "In 18 mins",
+          "done": false
+        },
+        {
+          "step": "Delivered",
+          "time": "In 24 mins",
+          "done": false
+        }
+      ]
+    },
+    {
       "id": "ORD-9201",
       "userId": "user-01",
       "restaurant": {

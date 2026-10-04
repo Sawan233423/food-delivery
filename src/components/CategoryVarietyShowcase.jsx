@@ -2,12 +2,14 @@ import React, { useState, useMemo } from 'react';
 import { useApp } from '../context/AppContext';
 import { CATEGORIES } from '../data/mockData';
 import { onImageError } from '../utils/imageFallbacks';
-import { Star, Plus, Minus, ArrowRight, X, Sparkles, Store, SlidersHorizontal } from 'lucide-react';
+import { Star, Plus, Minus, ArrowRight, X, Sparkles, Store, SlidersHorizontal, ZoomIn } from 'lucide-react';
+import { DishDetail3DModal } from './DishDetail3DModal';
 
 export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
   const { restaurants, selectedCategory, setSelectedCategory, cart, addToCart, updateCartQty } = useApp();
   const [subFilter, setSubFilter] = useState('all'); // all | bestseller | veg | nonveg | under250 | toprated
   const [sortBy, setSortBy] = useState('relevance'); // relevance | priceLow | rating
+  const [selectedDishFor3D, setSelectedDishFor3D] = useState(null);
 
   // Current category info
   const categoryInfo = CATEGORIES.find(c => c.id === selectedCategory) || {
@@ -188,7 +190,8 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
             return (
               <div
                 key={`${dish.restaurant.id}-${dish.id}`}
-                className="group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-orange-300 transition-all duration-300 overflow-hidden flex flex-col justify-between"
+                onClick={() => setSelectedDishFor3D(dish)}
+                className="group bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-orange-300 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   {/* Dish Image + Badges */}
@@ -218,6 +221,11 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
                       </div>
                     )}
 
+                    {/* View Angles hint on image */}
+                    <div className="absolute top-3 right-3 group-hover:flex hidden items-center gap-1 bg-black/75 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
+                      <span>📸 View Angles</span>
+                    </div>
+
                     {/* Rating Pill */}
                     <div className="absolute bottom-2.5 left-3 flex items-center gap-1 bg-black/60 backdrop-blur-md text-white text-xs font-extrabold px-2 py-0.5 rounded-md">
                       <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
@@ -231,7 +239,10 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
                     {/* Restaurant link badge */}
                     <button
                       type="button"
-                      onClick={() => onSelectRestaurant(dish.restaurant.fullResto)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onSelectRestaurant(dish.restaurant.fullResto);
+                      }}
                       className="group/resto flex items-center gap-1 text-[11px] font-bold text-orange-600 hover:text-orange-700 bg-orange-50 hover:bg-orange-100 px-2.5 py-1 rounded-lg transition-colors mb-2 w-fit"
                       title="Open Restaurant Full Menu"
                     >
@@ -251,7 +262,10 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
                 </div>
 
                 {/* Footer with Price and ADD Button */}
-                <div className="p-4 pt-0 flex items-center justify-between mt-2 border-t border-slate-100 pt-3">
+                <div 
+                  className="p-4 pt-0 flex items-center justify-between mt-2 border-t border-slate-100 pt-3"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <div>
                     <span className="text-xs text-slate-400 font-semibold block leading-none">Price</span>
                     <span className="font-black text-slate-900 text-base">₹{dish.price}</span>
@@ -304,6 +318,17 @@ export const CategoryVarietyShowcase = ({ onSelectRestaurant }) => {
           Order full multi-course menus directly from these specialized kitchens
         </p>
       </div>
+
+      {/* 3D Zoom Modal */}
+      {selectedDishFor3D && (
+        <DishDetail3DModal
+          dish={selectedDishFor3D}
+          restaurant={selectedDishFor3D.restaurant?.fullResto}
+          onClose={() => setSelectedDishFor3D(null)}
+          onSelectRestaurant={onSelectRestaurant}
+        />
+      )}
     </section>
   );
 };
+

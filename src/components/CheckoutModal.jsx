@@ -13,8 +13,10 @@ import {
   Copy, 
   Check, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Crosshair
 } from 'lucide-react';
+import { LocationPickerModal } from './LocationPickerModal';
 
 export const CheckoutModal = ({ isOpen, onClose }) => {
   const { placeOrder, calculateBill, selectedAddress, currentUser, showToast } = useApp();
@@ -22,6 +24,7 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [qrDetails, setQrDetails] = useState(null);
   const [copiedUpi, setCopiedUpi] = useState(false);
+  const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
 
   // Close on Escape key
   useEffect(() => {
@@ -84,12 +87,13 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div 
-      onClick={(e) => {
-        if (e.target === e.currentTarget && !isProcessing) onClose();
-      }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in"
-    >
+    <>
+      <div 
+        onClick={(e) => {
+          if (e.target === e.currentTarget && !isProcessing) onClose();
+        }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in"
+      >
       <div className="bg-white w-full max-w-lg rounded-3xl shadow-2xl border border-slate-200 animate-slide-up relative max-h-[88vh] overflow-hidden flex flex-col">
         
         {/* Sticky Header with Back and Cancel Button */}
@@ -130,16 +134,27 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
           <div className="w-8 h-8 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0">
             <MapPin className="w-4 h-4" />
           </div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
               <p className="font-bold text-slate-900">Delivering to {selectedAddress.tag}</p>
-              <span className="text-[10px] bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded-full">
-                25-30 Mins
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded-full">
+                  25-30 Mins
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsLocationModalOpen(true)}
+                  className="text-orange-600 hover:text-orange-700 font-extrabold text-[11px] underline underline-offset-2 flex items-center gap-0.5"
+                >
+                  <Crosshair className="w-3 h-3" />
+                  <span>Change</span>
+                </button>
+              </div>
             </div>
             <p className="text-slate-500 mt-0.5 truncate">{selectedAddress.text}</p>
           </div>
         </div>
+
 
         {/* Payment Options Selector */}
         <div className="mt-5 space-y-3">
@@ -344,5 +359,13 @@ export const CheckoutModal = ({ isOpen, onClose }) => {
 
       </div>
     </div>
-  );
+
+    {/* Location Picker Modal */}
+    <LocationPickerModal
+      isOpen={isLocationModalOpen}
+      onClose={() => setIsLocationModalOpen(false)}
+    />
+  </>
+);
 };
+

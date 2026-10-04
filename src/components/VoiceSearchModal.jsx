@@ -74,7 +74,11 @@ export const VoiceSearchModal = ({ isOpen, onClose, onSearch }) => {
       };
 
       recognitionRef.current = recognition;
-      recognition.start();
+      try {
+        recognition.start();
+      } catch (startErr) {
+        console.warn('Speech recognition start note:', startErr);
+      }
     } catch (err) {
       console.warn('Failed to start speech recognition:', err);
       setErrorMessage('Could not activate microphone. Tap any dish suggestion below to search.');
@@ -100,9 +104,12 @@ export const VoiceSearchModal = ({ isOpen, onClose, onSearch }) => {
 
   if (!isOpen) return null;
 
-  const handleApplySearch = (textToSearch) => {
+  const handleApplySearch = (textToSearch, event) => {
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
     const query = textToSearch || transcript;
-    if (!query.trim()) return;
+    if (!query || !query.trim()) return;
 
     if (recognitionRef.current) {
       try {
@@ -128,10 +135,13 @@ export const VoiceSearchModal = ({ isOpen, onClose, onSearch }) => {
       if (recognitionRef.current) {
         try {
           recognitionRef.current.start();
-        } catch {}
+        } catch (e) {
+          console.warn('Mic start error:', e);
+        }
       }
     }
   };
+
 
   return (
     <div 
@@ -214,7 +224,7 @@ export const VoiceSearchModal = ({ isOpen, onClose, onSearch }) => {
         {transcript && (
           <button
             type="button"
-            onClick={() => handleApplySearch(transcript)}
+            onClick={(e) => handleApplySearch(transcript, e)}
             className="mt-4 w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm py-3 rounded-2xl shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2 transition-all"
           >
             <span>Search "{transcript}"</span>
@@ -233,7 +243,7 @@ export const VoiceSearchModal = ({ isOpen, onClose, onSearch }) => {
               <button
                 key={item}
                 type="button"
-                onClick={() => handleApplySearch(item)}
+                onClick={(e) => handleApplySearch(item, e)}
                 className="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-orange-50 hover:text-orange-600 hover:border-orange-200 border border-slate-200/70 px-3 py-1.5 rounded-xl transition-all"
               >
                 {item}

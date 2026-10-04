@@ -24,7 +24,7 @@ export const SearchDropdown = ({ query, onClose, onSelectRestaurant }) => {
           restaurantId: resto.id,
           restaurantName: resto.name,
           restaurantCoords: resto.coords,
-          restaurant
+          restaurant: resto
         });
       }
     });
